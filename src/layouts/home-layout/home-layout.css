@@ -1,0 +1,30 @@
+/* Estilos estruturais (não mudam entre páginas) */
+.main-section {
+    background: linear-gradient(40deg, #2c2a69, #1a1a2e);
+  }
+  
+  .main-container {
+    max-width: 1440px; 
+    width: 95%;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .left-column {
+    background-color: #33336D;
+  }
+  
+  .row {
+    height: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .main-container {
+      width: 100%;
+      border-radius: 0;
+    }
+    .row {
+      min-height: auto;
+    }
+  }

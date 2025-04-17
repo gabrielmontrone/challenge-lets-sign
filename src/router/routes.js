@@ -1,19 +1,13 @@
 const routes = {
-    "/": {
-      template: "src/templates/home/home.html",
-      styles: "src/templates/home/home.css",
-      title: "Home | Let's Sign"
-    },
-    "/confirmar-dados": {
-      template: "src/templates/confirmar-dados/confirmar-dados.html",
-      title: "Confirmar Dados | Let's Sign"
-    },
-    "/base": {
-      template: "src/templates/base/base.html",
-      styles: "src/templates/base/base.css",
-      title: "Base | Let's Sign"
-    }
-  };
-  
+  "/": {
+    layout: "src/layouts/home-layout/home-layout.html", 
+    template: "src/pages/home/pagina-inicial/pagina-inicial.html",     
+    styles: [
+      "src/layouts/home-layout/home-layout.css",       
+      "src/pages/home/pagina-inicial/pagina-inicial.css"              
+    ],
+    title: "Home | Let's Sign"
+  }
+};
   export default routes;
   

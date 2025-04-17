@@ -1,0 +1,135 @@
+#left-content {
+  height: 80vh;
+}
+
+.image-shadow-wrapper {
+  height: 100%;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.9), 0 0 20px rgba(15, 15, 15, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.pdf-container {
+  width: 794px;
+  height: 100%;
+  margin: 0 auto; 
+  overflow: hidden;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.doc-pdf {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de hover apenas no container */
+.image-shadow-wrapper:hover {
+  transform: scale(1.02);
+}
+
+/* Scrollbar customizada */
+.pdf-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pdf-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.pdf-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.pdf-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.logo-img {
+  width: 420px;
+  height: auto;
+}
+
+/* Buttons */
+.download-btn {
+  background-color: #d8d8f2;
+  color: #333;
+  font-weight: 600;
+  width: 195px;
+  height: 38px;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 15px;
+  font-size: 16px;
+}
+
+.lets-sign-btn {
+  position: relative;
+  background-color: #2EDA8A;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 10px 30px;
+  font-size: 30px;
+  border: none;
+  width: 400px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.8s;
+  overflow: hidden;
+}
+
+.lets-sign-btn:before, .lets-sign-btn::after {
+  position:absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #6e6e94;
+  opacity: 0.4;
+  filter:blur(30px);
+  transition: 0.8s;
+}
+
+.lets-sign-btn::before {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-130px) skewX(-45deg);
+}
+
+.lets-sign-btn:hover::before,
+.lets-sign-btn:hover:after {
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+
+.lets-sign-btn:hover {
+  background: #33336D;
+  color: white;
+}
+
+.step-icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.safe-text {
+  font-size: 0.8rem;
+  color: #999;
+}
