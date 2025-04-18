@@ -21,6 +21,7 @@
   border-radius: 14px;
   background: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .doc-pdf {
@@ -29,6 +30,7 @@
   border: none;
   display: block;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 /* Efeito de hover apenas no container */
@@ -62,18 +64,6 @@
 }
 
 /* Buttons */
-.download-btn {
-  background-color: #d8d8f2;
-  color: #333;
-  font-weight: 600;
-  width: 195px;
-  height: 38px;
-  border: none;
-  border-radius: 25px;
-  padding: 5px 15px;
-  font-size: 16px;
-}
-
 .lets-sign-btn {
   position: relative;
   background-color: #2EDA8A;
@@ -83,7 +73,7 @@
   align-items: center;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 25px;
+  border-radius: 8px;
   padding: 10px 30px;
   font-size: 30px;
   border: none;

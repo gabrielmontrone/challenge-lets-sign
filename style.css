@@ -4,4 +4,9 @@
     box-sizing: border-box;
   }
 
-  
+/* Darkmode */
+
+/* Backgrounds */
+.bg-main-gradient {
+  background: linear-gradient(40deg, #2c2a69, #1a1a2e);
+}

@@ -7,6 +7,19 @@ const routes = {
       "src/pages/home/pagina-inicial/pagina-inicial.css"              
     ],
     title: "Home | Let's Sign"
+  },
+  "/workflow/confirmar-dados": {
+    layout: "src/layouts/workflow-layout/worflow-layout.html",
+    template: "src/pages/workflow/confirmar-dados/confirmar-dados.html", 
+    styles: [
+      "src/layouts/workflow-layout/workflow-layout.css",
+      "src/pages/workflow/confirmar-dados/confirmar-dados.css" 
+    ],
+    script: "src/pages/workflow/confirmar-dados/confirmar-dados.js",
+    title: "Confirmar Dados | Let's Sign",
+    target:"cards-container",
+    titulo: "Confirmando Dados",
+    passo: "Etapa 1 de 4"
   }
 };
   export default routes;

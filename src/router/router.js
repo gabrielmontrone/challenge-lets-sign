@@ -1,4 +1,5 @@
-import { loadComponent } from "./../utils/loadComponent.js";
+import { loadGlobalComponents } from "../utils/componentManager.js";
+import { injectHomeContent } from "../layouts/home-layout/home-layout.js";
 import routes from "./routes.js";
 
 class Router {
@@ -15,39 +16,47 @@ class Router {
   async handleRoute() {
     const path = window.location.hash.substring(1) || "/";
     const route = this.routes[path] || this.routes["/"];
-  
-    // Remove estilos antigos
+    
     document.querySelectorAll('link[data-route-style]').forEach(link => link.remove());
-  
+
     try {
-        // 1. Carrega LAYOUT BASE primeiro
+        // 1. Carregar layout base
         const layoutResponse = await fetch(route.layout || "src/layouts/default-layout.html");
         const layoutHTML = await layoutResponse.text();
         
-        // 2. Carrega CONTEÚDO ESPECÍFICO da página
+        // 2. Carregar conteúdo específico
         const contentResponse = await fetch(route.template);
         const contentHTML = await contentResponse.text();
-    
-        // 3. Insere apenas o layout no DOM
-        document.getElementById("app").innerHTML = layoutHTML; 
-    
-        // 4. Processa o conteúdo em um container temporário
-        const contentContainer = document.createElement('div');
-        contentContainer.innerHTML = contentHTML;
-        
-        // 5. Injeta dinamicamente nas áreas do layout
-        const leftContent = contentContainer.querySelector('#left-content');
-        const rightContent = contentContainer.querySelector('#right-content');
-        
-        if (leftContent) {
-            document.getElementById('left-content').replaceWith(leftContent);
+
+        // 3. Aplicar layout
+        document.getElementById("app").innerHTML = layoutHTML;
+
+        // 4. Atualizar títulos do workflow (NOVA SEÇÃO)
+        if(route.titulo && route.passo) {
+            const tituloEl = document.getElementById('workflow-titulo');
+            const passoEl = document.getElementById('workflow-passo');
+            if(tituloEl) tituloEl.textContent = route.titulo;
+            if(passoEl) passoEl.textContent = route.passo;
         }
-        
-        if (rightContent) {
-            document.getElementById('right-content').replaceWith(rightContent);
+
+        // 5. Lógica de injeção de conteúdo (HOME PRESERVADA)
+        switch(path) {
+            case "/":
+                injectHomeContent(contentHTML);
+                break;
+            
+            default:
+                if(route.target) {
+                    const targetElement = document.getElementById(route.target);
+                    if(targetElement) targetElement.innerHTML = contentHTML;
+                }
+                break;
         }
-    
-        // 6. Carrega CSS (layout + conteúdo)
+
+        // 6. Carregar componentes globais (header)
+        await loadGlobalComponents();
+
+        // 7. Carregar CSS específico
         if (route.styles) {
             route.styles.forEach(style => {
                 const link = document.createElement("link");
@@ -57,13 +66,21 @@ class Router {
                 document.head.appendChild(link);
             });
         }
-    
+
+        // 8. Carregar JS específico da página
+        if(route.script) {
+            const script = document.createElement("script");
+            script.src = route.script;
+            script.type = "module";
+            document.body.appendChild(script);
+        }
+
         document.title = route.title;
-  
+
     } catch (error) {
         console.error("Erro ao carregar rota:", error);
     }
-}
+  }
 }
 
 export default Router;
