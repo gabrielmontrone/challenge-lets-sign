@@ -1,8 +1,4 @@
 /* Estilos estruturais (não mudam entre páginas) */
-.main-section {
-    background: linear-gradient(40deg, #2c2a69, #1a1a2e);
-  }
-  
   .main-container {
     max-width: 1440px; 
     width: 95%;
@@ -12,7 +8,7 @@
   }
   
   .left-column {
-    background-color: #33336D;
+    background-color: #282855;
   }
   
   .row {

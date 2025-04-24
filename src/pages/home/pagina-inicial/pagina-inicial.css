@@ -63,57 +63,6 @@
   height: auto;
 }
 
-/* Buttons */
-.lets-sign-btn {
-  position: relative;
-  background-color: #2EDA8A;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  padding: 10px 30px;
-  font-size: 30px;
-  border: none;
-  width: 400px;
-  cursor: pointer;
-  outline: none;
-  transition: 0.8s;
-  overflow: hidden;
-}
-
-.lets-sign-btn:before, .lets-sign-btn::after {
-  position:absolute;
-  content: '';
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background: #6e6e94;
-  opacity: 0.4;
-  filter:blur(30px);
-  transition: 0.8s;
-}
-
-.lets-sign-btn::before {
-  width: 400px;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateX(-130px) skewX(-45deg);
-}
-
-.lets-sign-btn:hover::before,
-.lets-sign-btn:hover:after {
-  opacity: 0.6;
-  transform: translateX(320px) skewX(-45deg);
-}
-
-.lets-sign-btn:hover {
-  background: #33336D;
-  color: white;
-}
-
 .step-icon {
   font-size: 1.2rem;
   margin-right: 8px;

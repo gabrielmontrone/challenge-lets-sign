@@ -8,8 +8,9 @@ const routes = {
     ],
     title: "Home | Let's Sign"
   },
+
   "/workflow/confirmar-dados": {
-    layout: "src/layouts/workflow-layout/worflow-layout.html",
+    layout: "src/layouts/workflow-layout/workflow-layout.html",
     template: "src/pages/workflow/confirmar-dados/confirmar-dados.html", 
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
@@ -17,8 +18,7 @@ const routes = {
     ],
     script: "src/pages/workflow/confirmar-dados/confirmar-dados.js",
     title: "Confirmar Dados | Let's Sign",
-    target:"cards-container",
-    titulo: "Confirmando Dados",
+    titulo: "Confirme os dados informados abaixo",
     passo: "Etapa 1 de 4"
   }
 };

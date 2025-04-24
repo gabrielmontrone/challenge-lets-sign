@@ -3,7 +3,7 @@ width: 100%;
 height: 8vh;
 background: white;
 border-bottom: 2px solid rgba(247, 245, 245, 0.1); 
-background: linear-gradient(40deg, #2c2a69, #1a1a2e);
+background: #1a1a2e;
 }
 
 .header-items {

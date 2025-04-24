@@ -21,7 +21,7 @@ class Router {
 
     try {
         // 1. Carregar layout base
-        const layoutResponse = await fetch(route.layout || "src/layouts/default-layout.html");
+        const layoutResponse = await fetch(route.layout || "src/layouts/home-layout/home-layout.html");
         const layoutHTML = await layoutResponse.text();
         
         // 2. Carregar conteúdo específico
@@ -46,10 +46,8 @@ class Router {
                 break;
             
             default:
-                if(route.target) {
-                    const targetElement = document.getElementById(route.target);
-                    if(targetElement) targetElement.innerHTML = contentHTML;
-                }
+                const workflowContent = document.getElementById("workflow-content");
+                if (workflowContent) workflowContent.innerHTML = contentHTML; // ✅
                 break;
         }
 
@@ -71,7 +69,7 @@ class Router {
         if(route.script) {
             const script = document.createElement("script");
             script.src = route.script;
-            script.type = "module";
+            // script.type = "module";
             document.body.appendChild(script);
         }
 

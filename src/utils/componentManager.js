@@ -9,13 +9,6 @@ export const loadGlobalComponents = async () => {
       'src/components/header/header.css'
     );
 
-    // Carrega Cards
-    await loadComponent(
-      'cards-container',
-      'src/components/cards/cards.html',
-      'src/components/cards/cards.css'
-    );
-
   } catch (error) {
     console.error("Erro ao carregar componentes:", error);
   }

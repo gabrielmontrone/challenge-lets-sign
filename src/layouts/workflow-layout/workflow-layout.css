@@ -2,3 +2,7 @@
     width: 100%;
     max-height: 92vh;
 }
+
+#workflow-content {
+    width: 600px;
+}
