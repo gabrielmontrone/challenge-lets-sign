@@ -16,67 +16,73 @@ class Router {
   async handleRoute() {
     const path = window.location.hash.substring(1) || "/";
     const route = this.routes[path] || this.routes["/"];
-    
+
     document.querySelectorAll('link[data-route-style]').forEach(link => link.remove());
 
     try {
-        // 1. Carregar layout base
-        const layoutResponse = await fetch(route.layout || "src/layouts/home-layout/home-layout.html");
-        const layoutHTML = await layoutResponse.text();
-        
-        // 2. Carregar conteúdo específico
-        const contentResponse = await fetch(route.template);
-        const contentHTML = await contentResponse.text();
+      // 1. Carregar layout base
+      const layoutResponse = await fetch(route.layout || "src/layouts/home-layout/home-layout.html");
+      const layoutHTML = await layoutResponse.text();
 
-        // 3. Aplicar layout
-        document.getElementById("app").innerHTML = layoutHTML;
+      // 2. Carregar conteúdo específico
+      const contentResponse = await fetch(route.template);
+      const contentHTML = await contentResponse.text();
 
-        // 4. Atualizar títulos do workflow (NOVA SEÇÃO)
-        if(route.titulo && route.passo) {
-            const tituloEl = document.getElementById('workflow-titulo');
-            const passoEl = document.getElementById('workflow-passo');
-            if(tituloEl) tituloEl.textContent = route.titulo;
-            if(passoEl) passoEl.textContent = route.passo;
-        }
+      // 3. Aplicar layout
+      document.getElementById("app").innerHTML = layoutHTML;
 
-        // 5. Lógica de injeção de conteúdo (HOME PRESERVADA)
-        switch(path) {
-            case "/":
-                injectHomeContent(contentHTML);
-                break;
-            
-            default:
-                const workflowContent = document.getElementById("workflow-content");
-                if (workflowContent) workflowContent.innerHTML = contentHTML; // ✅
-                break;
-        }
+      // 3.1 Aguardar renderização do DOM
+      await new Promise(resolve => setTimeout(resolve, 50));
 
-        // 6. Carregar componentes globais (header)
-        await loadGlobalComponents();
+      // 4. Atualizar títulos do workflow (NOVA SEÇÃO)
+      if (route.titulo && route.passo) {
+        const tituloEl = document.getElementById('workflow-titulo');
+        const passoEl = document.getElementById('workflow-passo');
+        if (tituloEl) tituloEl.textContent = route.titulo;
+        if (passoEl) passoEl.textContent = route.passo;
+      }
 
-        // 7. Carregar CSS específico
-        if (route.styles) {
-            route.styles.forEach(style => {
-                const link = document.createElement("link");
-                link.rel = "stylesheet";
-                link.href = style;
-                link.setAttribute("data-route-style", "true");
-                document.head.appendChild(link);
-            });
-        }
+      // 5. Lógica de injeção de conteúdo (HOME PRESERVADA)
+      switch (path) {
+        case "/":
+          injectHomeContent(contentHTML);
+          break;
 
-        // 8. Carregar JS específico da página
-        if(route.script) {
-            const script = document.createElement("script");
-            script.src = route.script;
-            // script.type = "module";
-            document.body.appendChild(script);
-        }
+        default:
+          const workflowContent = document.getElementById("workflow-content");
+          if (workflowContent) workflowContent.innerHTML = contentHTML; // ✅
+          break;
+      }
 
-        document.title = route.title;
+      // 6. Carregar componentes globais (header)
+      await loadGlobalComponents();
+
+      // 7. Carregar CSS específico
+      if (route.styles) {
+        route.styles.forEach(style => {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = style;
+          link.setAttribute("data-route-style", "true");
+          document.head.appendChild(link);
+        });
+      }
+
+      // 8. Carregar JS específico da página
+      if (route.scripts) {
+        route.scripts.forEach(scriptSrc => {
+          document.querySelectorAll(`script[src="${scriptSrc}"]`).forEach(el => el.remove());
+          const script = document.createElement("script");
+          script.src = scriptSrc;
+          script.type = "module";
+          document.body.appendChild(script);
+        });
+      }
+
+      document.title = route.title;
 
     } catch (error) {
-        console.error("Erro ao carregar rota:", error);
+      console.error("Erro ao carregar rota:", error);
     }
   }
 }

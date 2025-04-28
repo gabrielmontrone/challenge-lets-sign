@@ -19,8 +19,8 @@ if (cpfInput) {
 
 // Aniversário
 document.getElementById('birthdate').addEventListener('input', function (e) {
-  let value = e.target.value.replace(/\D/g, ''); // remove tudo que não for número
-
+  let value = e.target.value.replace(/\D/g, ''); 
+  
   if (value.length > 2) value = value.slice(0, 2) + '/' + value.slice(2);
   if (value.length > 5) value = value.slice(0, 5) + '/' + value.slice(5, 9);
 
@@ -139,3 +139,38 @@ entryAreas.forEach(entryarea => {
       }
   });
 });
+
+// ========= NOVAS ALTERAÇÕES PARA A BARRA DE PROGRESSO ========= //
+const backButton = document.querySelector('.back-button');
+
+// Evento de submit do formulário
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Verificar se todos os campos são válidos
+    const allValid = Array.from(form.querySelectorAll('input')).every(input => {
+      return input.closest('.entryarea').classList.contains('success');
+    });
+
+    if (allValid) {
+      const name = form.querySelector('input[type="text"]').value.trim();
+      
+      // 1. Atualizar estado do workflow
+      window.dispatchEvent(new CustomEvent('nextStep', {
+        detail: { name: name }
+      }));
+
+      // 2. Navegar para próxima etapa
+      window.location.hash = '/workflow/comprovar-endereco';
+      console.log("Navegando para comprovar endereço")
+    }
+  });
+}
+
+// Evento do botão Voltar
+if (backButton) {
+  backButton.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('previousStep'));
+  });
+}

@@ -1,46 +1,52 @@
-<form id="form-dados" class="d-flex justify-content-center align-items-center flex-column">
-  <div class="container mb-5">
-    <div class="entryarea d-flex flex-column">
-      <input type="text" autocomplete="off" required>
-      <div class="labelline">Nome Completo</div>
-      <div class="input-icons">
-        <div class="spinner"></div>
-        <i class="fa-solid fa-circle-check checkmark"></i>
-        <i class="fa-solid fa-xmark xmark"></i>
+<div class="dados-container">
+
+  <form id="form-dados" class="form-dados ">
+    <div class="inputs-area d-flex justify-content-start align-items-center flex-column">
+      <div class="container mb-5">
+        <div class="entryarea d-flex flex-column">
+          <input type="text" autocomplete="off" required>
+          <div class="labelline">Nome Completo</div>
+          <div class="input-icons h-100 d-flex align-items-center">
+            <div class="spinner"></div>
+            <i class="fa-solid fa-circle-check checkmark"></i>
+            <i class="fa-solid fa-xmark xmark"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-5">
+        <div class="entryarea d-flex flex-columnm">
+          <input type="text" id="cpf" maxlength="14" autocomplete="off" required>
+          <div class="labelline">CPF</div>
+          <div class="input-icons">
+            <div class="spinner"></div>
+            <i class="fa-solid fa-circle-check checkmark"></i>
+            <i class="fa-solid fa-xmark xmark"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="entryarea d-flex flex-column">
+          <input type="text" id="birthdate" maxlength="10" autocomplete="off" required>
+          <div class="labelline">Data de Nascimento</div>
+          <div class="input-icons">
+            <div class="spinner"></div>
+            <i class="fa-solid fa-circle-check checkmark"></i>
+            <i class="fa-solid fa-xmark xmark"></i>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="container mb-5">
-    <div class="entryarea d-flex flex-column">
-      <input type="text" id="cpf" maxlength="14" autocomplete="off" required>
-      <div class="labelline">CPF</div>
-      <div class="input-icons">
-        <div class="spinner"></div>
-        <i class="fa-solid fa-circle-check checkmark"></i>
-        <i class="fa-solid fa-xmark xmark"></i>
-      </div>
+    <div class="button-container d-flex justify-content-center flex-column">
+      <button type="submit" class="lets-sign-btn d-block mx-auto mb-3">
+        Avançar
+      </button>
+      <button type="button" class="lets-sign-btn d-block mx-auto back-button">
+        Voltar
+      </button>
     </div>
-  </div>
 
-  <div class="container mb-5">
-    <div class="entryarea d-flex flex-column">
-      <input type="text" id="birthdate" maxlength="10" autocomplete="off" required>
-      <div class="labelline">Data de Nascimento</div>
-      <div class="input-icons">
-        <div class="spinner"></div>
-        <i class="fa-solid fa-circle-check checkmark"></i>
-        <i class="fa-solid fa-xmark xmark"></i>
-      </div>
-    </div>
-  </div>
-
-
-  <button type="submit" class="lets-sign-btn d-block mx-auto mb-3 mt-3">
-    Avançar
-  </button>
-
-  <button type="button" class="lets-sign-btn d-block mx-auto back-button">
-    Voltar
-  </button>
-</form>
+  </form>
+</div>

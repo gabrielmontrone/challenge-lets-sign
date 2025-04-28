@@ -1,0 +1,37 @@
+<div class="endereco-container">
+  <div class="endereco-section d-flex flex-column align-items-center">
+    <div class="img-area d-flex justify-content-start align-items-center">
+      <!-- Imagem padrão -->
+      <img src="public/assets/imgs/comprovante_endereco.svg" 
+           class="comprovante-endereco-img default-image" 
+           alt="Comprovante padrão">
+      
+      <!-- Preview (adicionar esta nova imagem) -->
+      <img src="#" 
+           class="comprovante-endereco-img preview-image d-none" 
+           alt="Pré-visualização">
+    </div>
+    <div class="button-container d-flex flex-column justify-content-center">
+      <!-- Input oculto -->
+      <input type="file" id="fileInput" hidden accept=".pdf,.doc,.docx,.jpg,.png">
+      
+      <!-- Botão original -->
+      <button type="button" id="uploadButton" class="lets-sign-btn d-block mx-auto mb-3" onclick="document.getElementById('fileInput').click()">
+        Anexar documento
+      </button>
+
+      <!-- Container do arquivo selecionado (inicialmente oculto) -->
+      <div id="selectedFileContainer" class="selected-file-container d-none">
+        <div class="d-flex align-items-center justify-content-center gap-2 h-100">
+          <span id="fileName" class="file-name"></span>
+          <button type="button" class="btn-confirmar" id="confirmButton">Confirmar</button>
+<button type="button" class="btn-escolher-outro" id="chooseAnotherButton">Escolher outro</button>
+        </div>
+      </div>
+
+      <button type="button" class="lets-sign-btn d-block mx-auto back-button">
+        Voltar
+      </button>
+    </div>
+  </div>
+</div>

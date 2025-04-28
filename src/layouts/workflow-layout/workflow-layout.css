@@ -5,4 +5,9 @@
 
 #workflow-content {
     width: 600px;
+    height: 500px;
+}
+
+.loading-overlay {
+    transition: width 0.5s ease-in-out;
 }

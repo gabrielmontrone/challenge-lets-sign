@@ -1,0 +1,83 @@
+.endereco-container {
+  height: 100%;
+}
+
+.endereco-section {
+  height: 100%;
+}
+
+.comprovante-endereco-img, .preview-image {
+  height: 300px;
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+}
+
+.comprovante-endereco-img:hover,
+.preview-image:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.06);
+}
+
+.img-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-container {
+  height: 200px;
+}
+
+/* Arquivo Selecionado */
+.selected-file-container {
+  margin: 15px 0;
+  height: 40%;
+  padding: 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #dee2e6;
+}
+
+.file-name {
+  flex-grow: 1;
+  font-family: 'Mulish';
+  color: white;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.btn-confirmar,
+.btn-escolher-outro {
+  padding: 5px 12px;
+  font-size: 0.8em;
+  font-family: 'Mulish';
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-confirmar {
+  background-color: #29c57c;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.btn-confirmar:hover {
+  background-color: #218838;
+}
+
+.btn-escolher-outro {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-escolher-outro:hover {
+  background-color: #5a6268;
+}
