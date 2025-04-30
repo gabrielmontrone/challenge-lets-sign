@@ -11,14 +11,22 @@ h1 {
     font-weight: 300;
 }
 
-h5, h6 {
+h3 {
+    font-family: 'Mulish';
+    color: white;
+}
+
+h5,
+h6 {
     font-family: 'Mulish';
     font-weight: 300;
 }
 
 p {
     font-family: 'Mulish';
-    font-weight: 400;
+    font-weight: 200;
+    color: white;
+    font-size: 1.2rem;
 }
 
 .signature-progress {
@@ -26,4 +34,11 @@ p {
     padding: 20px;
     color: white;
     font-size: 5rem;
+}
+
+.checkbox-label {
+    font-family: 'Mulish';
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
 }

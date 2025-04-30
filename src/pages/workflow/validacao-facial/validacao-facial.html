@@ -1,1 +1,104 @@
-<h1>TESTE</h1>
+<div class="validacao-container d-flex flex-column">
+    <div class="steps-wrapper">
+        <div class="img-and-step d-flex justify-content-start align-items-center flex-column">
+            <!-- Imagens -->
+            <div class="img-area mt-2">
+                <img src="public/assets/imgs/valide-sua-facial/user-icon.svg" class="step-img active" data-step="1">
+                <img src="public/assets/imgs/valide-sua-facial/document-icon.svg" class="step-img d-none" data-step="2">
+                <img src="public/assets/imgs/valide-sua-facial/camera-icon.svg" class="step-img d-none" data-step="3">
+                <img src="public/assets/imgs/valide-sua-facial/cnh-icon.svg" class="step-img d-none" data-step="4">
+            </div>
+
+            <!-- Textos -->
+            <div class="text-area">
+                <div class="step-text active mt-4" data-step="1">
+                    <h3>Captura da Foto e Documento</h3>
+                    <p>Separe seu documento e prepare-se para a foto.
+                    </p>
+                </div>
+                <div class="step-text d-none mt-4" data-step="2">
+                    <h3>Requisitos para a Foto</h3>
+                    <p>Esteja vestido e não use óculos ou outros acessórios.
+                    </p>
+                </div>
+                <div class="step-text d-none mt-4" data-step="3">
+                    <h3>Dispositivo com Câmera</h3>
+                    <p>É necessário acessar de um dispositivo que tenha
+                        câmera.</p>
+                </div>
+                <div class="step-text d-none mt-4" data-step="4">
+                    <h3>Escolha do Documento</h3>
+                    <p>Escolha aquele com a foto mais recente.</p>
+                </div>
+
+                <!-- Indicador de passos -->
+                <div class="steps-indicator d-flex justify-content-center">
+                    <div class="step-dot" data-step="1"></div>
+                    <div class="step-dot" data-step="2"></div>
+                    <div class="step-dot" data-step="3"></div>
+                </div>
+
+                <!-- Checkbox do passo 4 -->
+                <div class="checkbox-container d-flex justify-content-center flex-column align-items-center">
+                    <div class="d-flex align-items-center">
+                        <input type="checkbox" id="biometriaCheckbox" class="checkbox-input">
+                        <label for="biometriaCheckbox" class="checkbox-label ms-2">Autorizo uso da biometria facial</label>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="button-container d-flex justify-content-center flex-column">
+            <!-- Botão normal (default) -->
+            <div class="default-buttons">
+                <button type="button" id="nextButton" class="lets-sign-btn d-block mx-auto mb-3">
+                    Avançar
+                </button>
+                <button type="button" class="lets-sign-btn d-block mx-auto back-button" id="backButton">
+                    Voltar
+                </button>
+            </div>
+
+            <!-- Botões de documento (hidden inicialmente) -->
+            <div class="document-buttons d-none">
+                <div class="d-flex flex-row w-100 mx-0 justify-content-center align-items-center">
+                    <div class="col-6 pe-1">
+                        <button type="button" class="lets-sign-btn document-option" data-doc="CNH">
+                            CNH
+                        </button>
+                    </div>
+                    <div class="col-6 ps-1">
+                        <button type="button" class="lets-sign-btn document-option" data-doc="RG">
+                            RG
+                        </button>
+                    </div>
+                </div>
+                <button type="button" class="lets-sign-btn back-button w-100 mt-3">
+                    Voltar
+                </button>
+            </div>
+
+            <div class="camera-fallback d-none text-center">
+                <div class="qr-code-placeholder mb-3">
+                    <img src="public/assets/imgs/valide-sua-facial/qr-code.png" alt="QR Code de exemplo"
+                        class="qr-code-img">
+                </div>
+
+                <p class="text-black mb-3">
+                    Verificamos que seu dispositivo atual não possui câmera.
+                    <br>
+                    Escaneie este QR Code para continuar pelo seu celular.
+                </p>
+
+                <div class="camera-buttons">
+                    <button type="button" class="lets-sign-btn back-button qr-back-button w-100">
+                        Voltar
+                    </button>
+                    <button type="button" class="lets-sign-btn dev-bypass" style="display: none;">
+                        Continuar sem câmera (Dev)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -99,7 +99,7 @@
 /* Botão Voltar - Versão Única */
 .back-button {
   background: transparent;
-  color: #FF6B6B !important; /* Vermelho suave para ação destrutiva */
+  color: #FF6B6B !important; 
   border: 1px solid #FF6B6B !important;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: inset 0 0 10px transparent;
@@ -108,24 +108,22 @@
 .back-button::before {
   content: '';
   position: absolute;
-  right: -100%; /* Começa da direita */
+  right: -100%; 
   top: 0;
   height: 100%;
   width: 40%;
   background: rgba(255, 107, 107, 0.2);
-  transform: skewX(45deg); /* Direção oposta */
+  transform: skewX(45deg); 
   transition: 0.7s;
   z-index: 0;
 }
 
 .back-button:hover {
   background: rgba(255, 107, 107, 0.1);
-  box-shadow: 
-    inset 0 0 15px rgba(255,  ䷿, 107, 0.2),
-    0 0 15px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
   border-color: #FF6B6B !important;  
 }
 
 .back-button:active {
-  transform: translateX(5px); /* Feedback ao clicar */
+  transform: translateX(5px); 
 }

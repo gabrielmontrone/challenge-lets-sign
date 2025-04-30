@@ -1,0 +1,258 @@
+.validacao-container {
+    height: 100%;
+}
+
+.steps-wrapper {
+    height: 100%;
+}
+
+.img-and-step {
+    height: 300px;
+}
+
+.button-container {
+    height: 200px;
+}
+
+.step-img {
+    transition: opacity 0.5s ease;
+    position: absolute;
+    height: 170px;
+    width: auto;
+}
+
+.step-img.active {
+    opacity: 1;
+    position: relative;
+}
+
+.step-img.d-none {
+    opacity: 0;
+    display: none;
+}
+
+.step-text {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.step-text.active {
+    display: block;
+    opacity: 1;
+}
+
+.img-area {
+    position: relative;
+}
+
+/* Document Buttons */
+.document-option.lets-sign-btn {
+    width: 100% !important;
+    min-width: unset !important;
+    flex-grow: 1;
+    color: #09EEFE;
+    border: 1px solid #09EEFE !important;
+}
+
+.document-option.lets-sign-btn:hover {
+    background-color: rgba(9, 224, 240, 0.8);
+    color: white;
+    box-shadow: 0 0 15px #06b4c0;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.document-buttons .d-flex {
+    gap: 8px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.document-buttons .col-6 {
+    padding: 0 !important;
+    flex-grow: 1;
+}
+
+/* Indicador de passos */
+.steps-indicator {
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.step-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: all 0.3s ease;
+}
+
+.step-dot.active {
+    background-color: #666;
+    transform: scale(1.2);
+}
+
+/* Checkbox no passo 4 */
+.checkbox-container {
+    margin: 20px 0;
+    display: none;
+    align-items: center;
+    gap: 12px;
+}
+
+.checkbox-container.show {
+    display: flex;
+}
+
+/* Esconde o checkbox padrão */
+.checkbox-container input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* Cria checkbox personalizada */
+.checkbox-container {
+    margin-top: -3px; 
+    margin-bottom: 20px; 
+  }
+
+.checkbox-container label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 35px;
+}
+
+.checkbox-container label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border: 2px solid #666;
+    border-radius: 5px;
+    background-color: #666;
+    transition: all 0.3s ease;
+}
+
+/* Estilo quando marcado */
+.checkbox-container input[type="checkbox"]:checked+label::before {
+    background-color: #2EDA8A;
+    border-color: #2EDA8A;
+}
+
+/* Cria o "tique" personalizado */
+.checkbox-container label::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked+label::after {
+    opacity: 1;
+}
+
+.checkbox-container label {
+    margin: 0;
+    line-height: 1.5;
+    user-select: none;
+}
+
+/* Checkbox Error */
+@keyframes piscar {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.checkbox-container.invalid {
+    animation: piscar 0.5s ease 1;
+    color: #dc3545;
+}
+
+.checkbox-container.invalid .checkbox-input {
+    border-color: #dc3545;
+    accent-color: #dc3545;
+}
+
+.checkbox-container.invalid .checkbox-label {
+    color: #dc3545;
+    font-weight: 400;
+}
+
+/* Câmera */
+.camera-fallback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.camera-fallback .d-flex {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-code-placeholder {
+    width: 200px;
+    height: 200px;
+    background: #f0f0f0;
+    margin: 0 auto;
+}
+
+.qr-code-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-back-button {
+    width: 100%;
+    margin: 0 auto;
+    padding: 12px 24px;
+}
+
+.dev-bypass {
+    background-color: transparent !important;
+    border-color: #ffc107 !important;
+    color: #000 !important;
+    width: 80% !important;
+    margin: 0 auto !important;
+    padding: 12px 24px !important;
+    margin-top: 8px !important;
+}
+
+.dev-bypass:hover {
+    background-color: #e0a800 !important;
+    border-color: #d39e00 !important;
+}
+
+.camera-fallback .d-flex.gap-2 {
+    gap: 1rem !important;
+}
+
+.buttons-gap {
+    gap: 1rem !important; 
+}
+
+.lets-sign-btn.dev-bypass {
+    width: 100%;
+}
