@@ -1,0 +1,48 @@
+<div class="pix-container d-flex flex-column">
+    <div class="steps-wrapper">
+        <div class="img-and-step d-flex justify-content-start align-items-center flex-column">
+            <!-- Imagens -->
+            <div class="img-area mt-2">
+                <img src="public/assets/imgs/autenticacao-pix/pix-icon.svg" class="step-img active" data-step="1">
+                <img src="public/assets/imgs/autenticacao-pix/security-icon.svg" class="step-img d-none" data-step="2">
+                <img src="public/assets/imgs/valide-sua-facial/qr-code.png" class="step-img d-none" data-step="3">
+            </div>
+
+            <div class="text-area">
+                <div class="step-text active mt-4" data-step="1">
+                    <h3>Entenda a etapa de segurança</h3>
+                    <p>Para evitar fraudes, é necessário realizar uma
+                        autenticação bancária.
+                    </p>
+                </div>
+                <div class="step-text d-none mt-4" data-step="2">
+                    <h3>Faça um pix de R$0.01</h3>
+                    <p>Dessa forma, seus dados são confirmados de forma segura.
+                    </p>
+                </div>
+                <div class="step-text d-none mt-4" data-step="3">
+                    <h3>Abra o APP do seu banco</h3>
+                    <p>É necessário acessar de um dispositivo que tenha
+                        câmera.</p>
+                </div>
+
+                <!-- Indicador de passos -->
+                <div class="steps-indicator d-flex justify-content-center">
+                    <div class="step-dot" data-step="1"></div>
+                    <div class="step-dot" data-step="2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container d-flex justify-content-center flex-column">
+            <!-- Botão normal (default) -->
+            <div class="default-buttons">
+                <button type="button" id="nextButton" class="lets-sign-btn d-block mx-auto mb-3">
+                    Avançar
+                </button>
+                <button type="button" class="lets-sign-btn d-block mx-auto back-button" id="backButton">
+                    Voltar
+                </button>
+            </div>
+        </div>
+    </div>

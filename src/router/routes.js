@@ -57,6 +57,22 @@ const routes = {
     passo: "Etapa 3 de 4"
   },
 
+  "/workflow/autenticacao-pix": {
+    layout: "src/layouts/workflow-layout/workflow-layout.html",
+    template: "src/pages/workflow/autenticacao-pix/autenticacao-pix.html", 
+    styles: [
+      "src/layouts/workflow-layout/workflow-layout.css",
+      "src/pages/workflow/autenticacao-pix/autenticacao-pix.css" 
+    ],
+    scripts:[ 
+      "src/layouts/workflow-layout/workflow-layout.js",
+      "src/pages/workflow/autenticacao-pix/autenticacao-pix.js",
+    ],
+    title: "Autentificação via PIX | Let's Sign",
+    titulo: "Autentificação via PIX",
+    passo: "Etapa 4 de 4"
+  },
+
 };
   export default routes;
   

@@ -1,0 +1,65 @@
+.pix-container {
+    height: 100%;
+}
+
+.steps-wrapper {
+    height: 100%;
+}
+
+.img-and-step {
+    height: 300px;
+}
+
+.button-container {
+    height: 200px;
+}
+
+.step-img {
+    transition: opacity 0.5s ease;
+    position: absolute;
+    height: 170px;
+    width: auto;
+}
+
+.step-img.active {
+    opacity: 1;
+    position: relative;
+}
+
+.step-img.d-none {
+    opacity: 0;
+    display: none;
+}
+
+.step-text {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.step-text.active {
+    display: block;
+    opacity: 1;
+}
+
+.img-area {
+    position: relative;
+}
+
+/* Indicador de passos */
+.steps-indicator {
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.step-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: all 0.3s ease;
+}
+
+.step-dot.active {
+    background-color: #666;
+    transform: scale(1.2);
+}
