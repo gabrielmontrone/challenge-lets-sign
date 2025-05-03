@@ -4,8 +4,19 @@ const config = {
   totalSteps: 3,
   onUpdate: (currentStep) => {
     const nextButton = document.getElementById('nextButton');
+    const stepsIndicator = document.querySelector('.steps-indicator');
+    
+    // Esconder bolinhas no passo 3
+    if (currentStep === 3) {
+        stepsIndicator.classList.add('d-none-indicator');
+        nextButton.classList.add('confirm-step');
+      } else {
+        stepsIndicator.classList.remove('d-none-indicator');
+        nextButton.classList.remove('confirm-step');
+      }
+
     if (nextButton) {
-      nextButton.innerHTML = currentStep === 3 ? 'Confirmar PIX' : 'Avançar';
+      nextButton.innerHTML = currentStep === 3 ? 'Copiar código' : 'Avançar';
     }
   }
 };

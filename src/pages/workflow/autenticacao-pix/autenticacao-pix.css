@@ -63,3 +63,15 @@
     background-color: #666;
     transform: scale(1.2);
 }
+
+/* Nova classe para o botão no passo 3 */
+.lets-sign-btn.confirm-step {
+    background-color: transparent!important; 
+    border-color: #09EEFE !important;
+    color: #09EEFE;
+}
+
+/* Esconder indicador quando necessário */
+.steps-indicator.d-none-indicator {
+    display: none !important;
+}
