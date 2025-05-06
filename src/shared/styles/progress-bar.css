@@ -1,0 +1,20 @@
+.progress-container {
+    position: relative;
+    width: 80%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 2rem auto;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.steps-counter {
+    top: -30px;
+    font-size: 0.8rem;
+}

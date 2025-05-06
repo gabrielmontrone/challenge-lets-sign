@@ -111,7 +111,13 @@ class Router {
         detail: { path }
       }));
 
-    } catch (error) {
+      // 11. Funcionalidade para barra de progresso
+      window.dispatchEvent(new CustomEvent('route:updated', {
+        detail: { route } 
+      }));
+    } 
+    
+    catch (error) {
       console.error("Erro ao carregar rota:", error);
     }
   }

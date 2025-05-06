@@ -20,6 +20,7 @@ const routes = {
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/confirmar-dados/confirmar-dados.js",
     ],
+    step: 0,
     title: "Confirme seus dados | Let's Sign",
     titulo: "Confirme os dados informados abaixo",
     passo: "Etapa 1 de 4"
@@ -36,6 +37,7 @@ const routes = {
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/comprovar-endereco/comprovar-endereco.js",
     ],
+    step: 1,
     title: "Comprove seu endereço | Let's Sign",
     titulo: "Comprovante de endereço",
     passo: "Etapa 2 de 4"
@@ -52,6 +54,7 @@ const routes = {
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/validacao-facial/validacao-facial.js",
     ],
+    step: 2,
     title: "Valide sua facial | Let's Sign",
     titulo: "Valide sua facial",
     passo: "Etapa 3 de 4"
@@ -68,6 +71,7 @@ const routes = {
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/autenticacao-pix/autenticacao-pix.js",
     ],
+    step: 3,
     title: "Autenticação via PIX | Let's Sign",
     titulo: "Autenticação via PIX",
     passo: "Etapa 4 de 4"
