@@ -1,4 +1,4 @@
-import { StepManager } from "../../../utils/stepManager.js";
+import { StepManager } from "../../../shared/utils/stepManager.js"
 
 const config = {
   totalSteps: 3,

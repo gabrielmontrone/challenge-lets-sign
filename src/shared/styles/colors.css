@@ -1,0 +1,19 @@
+:root {
+    /* Light Greens */
+    --light-green: #2EDA8A;
+  
+    /* Light Reds */
+    --light-red: #FF6B6B;
+  
+    /* Dark Purples */
+    --dark-purple: #1A1A2E;
+  
+    /* Light Blues */
+    --light-blue: #09EEFE;
+  
+    /* Warning Reds */
+    --warning-red: #DC3545;
+  
+    /* Yellows */
+    --yellow: #FFC107;
+  }

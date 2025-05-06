@@ -1,6 +1,6 @@
-import { loadGlobalComponents } from "../utils/componentManager.js";
+import { loadGlobalComponents } from "../shared/utils/componentManager.js";
 import { injectHomeContent } from "../layouts/home-layout/home-layout.js";
-import { HeaderController } from "../components/header/header.js";
+import { HeaderController } from "../shared/components/header/header.js"
 import routes from "./routes.js";
 
 class Router {

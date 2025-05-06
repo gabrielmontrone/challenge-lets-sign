@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'Bastiga';
-    src: url('Bastliga\ One.ttf') format('truetype');
+    src: url('public/assets/fonts/Bastliga One.ttf') format('truetype');
 }
 
 h1 {

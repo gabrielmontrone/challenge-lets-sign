@@ -5,8 +5,8 @@ export const loadGlobalComponents = async () => {
     // Carrega Header
     await loadComponent(
       'header-container',
-      'src/components/header/header.html',
-      'src/components/header/header.css'
+      'src/shared/components/header/header.html',
+      'src/shared/components/header/header.css'
     );
 
   } catch (error) {
