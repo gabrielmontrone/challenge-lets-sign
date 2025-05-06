@@ -11,10 +11,12 @@
     <!-- Conteúdo dinâmico -->
     <div id="workflow-content" class="d-flex justify-content-center"></div> 
 
-    <!-- <div class="progress-container position-relative d-inline-block fs-2 fw-bold my-5">
-      <div class="signature-progress"></div>
-      <div class="position-absolute top-0 end-0 bottom-0 bg-main-gradient w-100 loading-overlay" id="loadingOverlay"></div>
-    </div> -->
+    <div class="progress-container position-relative d-inline-block fs-2 fw-bold my-5">
+      <div class="progress-bar bg-progress" style="width: 0%"></div>
+      <div class="steps-counter text-white position-absolute start-50 translate-middle">
+        Passo <span id="current-step">1</span> de 4
+      </div>
+    </div>
 
   </div>
 </div>

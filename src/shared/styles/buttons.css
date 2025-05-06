@@ -1,0 +1,110 @@
+.button-container {
+    max-height: 200px;
+  }
+  
+  .lets-sign-btn {
+    font-family: 'Mulish';
+    font-weight: 300;
+    position: relative;
+    color: #2EDA8A;
+    background: transparent;
+    border: 1px solid #2EDA8A !important; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 1rem;
+    padding: 10px 30px;
+    font-size: 30px;
+    width: 400px !important;
+    min-width: 400px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.8s;
+    overflow: hidden;
+  }
+  
+  .lets-sign-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(46, 218, 170, 0.15); 
+    opacity: 0;
+    filter: blur(20px);
+    transition: 0.7s;
+    z-index: 0; 
+  }
+  
+  /* Efeito de deslize */
+  .lets-sign-btn::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    transition: 0.7s;
+  }
+  
+  /* Hover States */
+  .lets-sign-btn:hover {
+    background-color: rgba(46, 218, 138, 0.8);
+    color: white;
+    box-shadow: 0 0 15px rgba(46, 218, 170, 0.4);
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .lets-sign-btn:hover::before {
+    opacity: 0.6;
+    left: 100%;
+  }
+  
+  .lets-sign-btn:hover::after {
+    left: 150%;
+  }
+  
+  /* Garante que o texto fique na frente */
+  .lets-sign-btn span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Botão Voltar - Versão Única */
+  .back-button {
+    background: transparent;
+    color: #FF6B6B !important; 
+    border: 1px solid #FF6B6B !important;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 0 10px transparent;
+  }
+  
+  .back-button::before {
+    content: '';
+    position: absolute;
+    right: -100%; 
+    top: 0;
+    height: 100%;
+    width: 40%;
+    background: rgba(255, 107, 107, 0.2);
+    transform: skewX(45deg); 
+    transition: 0.7s;
+    z-index: 0;
+  }
+  
+  .back-button:hover {
+    background: rgba(255, 107, 107, 0.1);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+    border-color: #FF6B6B !important;  
+  }
+  
+  .back-button:active {
+    transform: translateX(5px); 
+  }
