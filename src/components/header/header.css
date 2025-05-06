@@ -33,4 +33,9 @@ border-left: none;
     color: #E9E5FD;
 }
 
+/* Assinatura concluída */
+.signature-completed {
+    transition: color 0.3s ease;
+  }
+  
 

@@ -1,5 +1,6 @@
 import { loadGlobalComponents } from "../utils/componentManager.js";
 import { injectHomeContent } from "../layouts/home-layout/home-layout.js";
+import { HeaderController } from "../components/header/header.js";
 import routes from "./routes.js";
 
 class Router {
@@ -24,38 +25,47 @@ class Router {
       const layoutResponse = await fetch(route.layout || "src/layouts/home-layout/home-layout.html");
       const layoutHTML = await layoutResponse.text();
 
-      // 2. Carregar conteúdo específico
+      // 2. Aplicar layout
+      document.getElementById("app").innerHTML = layoutHTML;
+
+      // 2.1 Aguardar renderização do DOM
+      await new Promise(resolve => {
+        requestAnimationFrame(() => {
+          setTimeout(resolve, 50);
+        });
+      });
+
+      // 3. Carregar componentes globais primeiro
+      await loadGlobalComponents();
+
+      // 4. Carregar conteúdo específico
       const contentResponse = await fetch(route.template);
       const contentHTML = await contentResponse.text();
 
-      // 3. Aplicar layout
-      document.getElementById("app").innerHTML = layoutHTML;
+      // 5. Lógica de injeção de conteúdo 
+      switch (path) {
+        case "/":
+          injectHomeContent(contentHTML);
+          break;
 
-      // 3.1 Aguardar renderização do DOM
-      await new Promise(resolve => setTimeout(resolve, 50));
+        case "/assinatura-concluida": 
+          const mainContent = document.querySelector('.main-content .container');
+          if (mainContent) mainContent.innerHTML = contentHTML;
+          break;
 
-      // 4. Atualizar títulos do workflow (NOVA SEÇÃO)
+        default:
+          const workflowContent = document.getElementById("workflow-content");
+          if (workflowContent) workflowContent.innerHTML = contentHTML;
+          break;
+      }
+
+      // 6. Atualizar títulos do workflow
       if (route.titulo && route.passo) {
         const tituloEl = document.getElementById('workflow-titulo');
         const passoEl = document.getElementById('workflow-passo');
         if (tituloEl) tituloEl.textContent = route.titulo;
         if (passoEl) passoEl.textContent = route.passo;
       }
-
-      // 5. Lógica de injeção de conteúdo (HOME PRESERVADA)
-      switch (path) {
-        case "/":
-          injectHomeContent(contentHTML);
-          break;
-
-        default:
-          const workflowContent = document.getElementById("workflow-content");
-          if (workflowContent) workflowContent.innerHTML = contentHTML; // ✅
-          break;
-      }
-
-      // 6. Carregar componentes globais (header)
-      await loadGlobalComponents();
 
       // 7. Carregar CSS específico
       if (route.styles) {
@@ -68,18 +78,38 @@ class Router {
         });
       }
 
-      // 8. Carregar JS específico da página
+      // 8. Carregar JS específico da página (atualizado)
       if (route.scripts) {
         route.scripts.forEach(scriptSrc => {
+          // Remove scripts antigos
           document.querySelectorAll(`script[src="${scriptSrc}"]`).forEach(el => el.remove());
+          
           const script = document.createElement("script");
           script.src = scriptSrc;
-          script.type = "module";
+          
+          // Mantém type="module" se necessário
+          if (scriptSrc.includes('workflow-layout.js') || scriptSrc.includes('validacao-facial.js') || scriptSrc.includes('autenticacao-pix.js')) {
+            script.type = "module";
+          }
+          
+          script.defer = true; 
           document.body.appendChild(script);
         });
       }
 
       document.title = route.title;
+
+      // 9. Assinatura concluída
+      if (path === '/assinatura-concluida') {
+        HeaderController.updateSignatureStatus(true);
+      } else {
+        HeaderController.updateSignatureStatus(false);
+      }
+
+      // 10. Disparar evento de DOM pronto
+      window.dispatchEvent(new CustomEvent('app:domready', {
+        detail: { path }
+      }));
 
     } catch (error) {
       console.error("Erro ao carregar rota:", error);

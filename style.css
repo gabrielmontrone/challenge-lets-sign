@@ -21,6 +21,10 @@
 }
 
 /* Buttons */
+.button-container {
+  max-height: 200px;
+}
+
 .lets-sign-btn {
   font-family: 'Mulish';
   font-weight: 300;
@@ -127,3 +131,4 @@
 .back-button:active {
   transform: translateX(5px); 
 }
+

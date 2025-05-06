@@ -10,10 +10,6 @@
     height: 300px;
 }
 
-.button-container {
-    height: 200px;
-}
-
 .step-img {
     transition: opacity 0.5s ease;
     position: absolute;
@@ -94,15 +90,20 @@
 
 /* Checkbox no passo 4 */
 .checkbox-container {
-    margin: 20px 0;
-    display: none;
-    align-items: center;
-    gap: 12px;
-}
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: none !important; 
+  }
 
-.checkbox-container.show {
-    display: flex;
-}
+  .checkbox-container.show {
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+    display: flex !important; /* Sobrescreve o d-none do Bootstrap */
+    justify-content: center;
+  }
 
 /* Esconde o checkbox padrão */
 .checkbox-container input[type="checkbox"] {
@@ -230,6 +231,10 @@
     padding: 12px 24px;
 }
 
+.camera-fallback .d-flex.gap-2 {
+    gap: 1rem !important;
+}
+
 .dev-bypass {
     background-color: transparent !important;
     border-color: #ffc107 !important;
@@ -238,16 +243,12 @@
     margin: 0 auto !important;
     padding: 12px 24px !important;
     margin-top: 8px !important;
-}
-
-.dev-bypass:hover {
+  }
+  
+  .dev-bypass:hover {
     background-color: #e0a800 !important;
     border-color: #d39e00 !important;
-}
-
-.camera-fallback .d-flex.gap-2 {
-    gap: 1rem !important;
-}
+  }
 
 .buttons-gap {
     gap: 1rem !important; 

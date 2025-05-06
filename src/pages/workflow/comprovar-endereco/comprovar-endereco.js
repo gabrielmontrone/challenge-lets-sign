@@ -1,15 +1,3 @@
-// ========= RECUPERAR ESTADO DO WORKFLOW ========= //
-const storedName = sessionStorage.getItem('workflowName');
-if (storedName) {
-  const nameElement = document.querySelector('.signature-progress');
-  if (nameElement) {
-    nameElement.textContent = storedName;
-  } else {
-    console.error('Elemento .signature-progress não encontrado');
-  }
-}
-
-
 // Função para aplicar o efeito 3D
 function applyHoverEffect(imageElement) {
   imageElement.addEventListener('mousemove', (e) => {

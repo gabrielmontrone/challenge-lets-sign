@@ -1,41 +1,49 @@
-export async function loadComponent(targetId, htmlPath, cssPath) {
-  const target = document.getElementById(targetId);
+export async function loadComponent(targetId, htmlPath, cssPath, options = {}) {
+    const { retries = 3, retryDelay = 100 } = options;
+    let target = null;
   
-  // Verificação robusta do elemento target
-  if (!target) {
-      console.error(`Elemento alvo não encontrado: #${targetId}`);
+    // Tentar encontrar o elemento com retry
+    for (let i = 0; i < retries; i++) {
+      target = document.getElementById(targetId);
+      if (target) break;
+      await new Promise(resolve => setTimeout(resolve, retryDelay * (i + 1)));
+    }
+  
+    if (!target) {
+      console.error(`Elemento alvo não encontrado após ${retries} tentativas: #${targetId}`);
       return false;
-  }
-
-  try {
-      // Carrega o HTML com tratamento de erro
+    }
+  
+    try {
+      // Carregar HTML
       const htmlResponse = await fetch(htmlPath);
-      if (!htmlResponse.ok) throw new Error(`Falha ao carregar HTML: ${htmlResponse.status}`);
+      if (!htmlResponse.ok) throw new Error(`HTTP error! status: ${htmlResponse.status}`);
       const html = await htmlResponse.text();
       
-      // Atualiza o DOM
+      // Injetar HTML
       target.innerHTML = html;
-
-      // Carrega o CSS condicionalmente
+  
+      // Carregar CSS condicionalmente
       if (cssPath) {
-          const existingStyles = [...document.styleSheets].some(sheet => 
-              sheet.href?.includes(cssPath.split('/').pop())
-          );
-
-          if (!existingStyles) {
-              const link = document.createElement('link');
-              link.rel = 'stylesheet';
-              link.href = cssPath;
-              link.onerror = () => console.error(`Falha ao carregar CSS: ${cssPath}`);
-              document.head.appendChild(link);
-          }
+        const cssFilename = cssPath.split('/').pop();
+        const isAlreadyLoaded = [...document.styleSheets].some(
+          sheet => sheet.href?.includes(cssFilename)
+        );
+  
+        if (!isAlreadyLoaded) {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = cssPath;
+          link.onerror = () => console.error(`CSS failed: ${cssPath}`);
+          document.head.appendChild(link);
+        }
       }
-
+  
       return true;
-
-  } catch (error) {
+  
+    } catch (error) {
       console.error(`Erro no componente ${targetId}:`, error);
-      target.innerHTML = `<div class="error">Erro ao carregar o componente</div>`;
+      target.innerHTML = `<div class="error-component">Erro no componente</div>`;
       return false;
+    }
   }
-}

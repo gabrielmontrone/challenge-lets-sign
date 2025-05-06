@@ -16,7 +16,7 @@ const routes = {
       "src/layouts/workflow-layout/workflow-layout.css",
       "src/pages/workflow/confirmar-dados/confirmar-dados.css" 
     ],
-    scripts:[ 
+    scripts: [
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/confirmar-dados/confirmar-dados.js",
     ],
@@ -68,10 +68,24 @@ const routes = {
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/autenticacao-pix/autenticacao-pix.js",
     ],
-    title: "Autentificação via PIX | Let's Sign",
-    titulo: "Autentificação via PIX",
+    title: "Autenticação via PIX | Let's Sign",
+    titulo: "Autenticação via PIX",
     passo: "Etapa 4 de 4"
   },
+
+  "/assinatura-concluida": {
+    layout: "src/layouts/final-layout/final-layout.html", 
+    template: "src/pages/final/assinatura-concluida/assinatura-concluida.html",     
+    styles: [
+      "src/layouts/final-layout/final-layout.css",       
+      "src/pages/final/assinatura-concluida/assinatura-concluida.css"              
+    ],
+    scripts: [
+      "src/layouts/final-layout/final-layout.js"
+    ],
+    title: "Assinatura Concluída | Let's Sign"
+  },
+
 
 };
   export default routes;
