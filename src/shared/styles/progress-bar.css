@@ -1,20 +1,38 @@
-.progress-container {
+.signature-container {
+    display: inline-block;
+    margin: 40px auto;
     position: relative;
-    width: 80%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    margin: 2rem auto;
+    /* overflow: hidden; */
 }
 
-.progress-bar {
-    height: 100%;
-    border-radius: 10px;
-    background: #fff;
-    transition: width 0.3s ease;
+.signature-text {
+    font-family: 'Bastiga', cursive;
+    font-size: 5rem;
+    color: #fff;
+    white-space: nowrap;
+    position: relative;
+    padding: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.signature-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: #1a1a2e;
+    display: inline-block;
+    transition: width 0.5s ease;
+    z-index: 2;
 }
 
 .steps-counter {
-    top: -30px;
-    font-size: 0.8rem;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    color: #fff;
+    font-size: 0.9rem;
+    z-index: 3;
 }

@@ -148,22 +148,14 @@ if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Verificar se todos os campos são válidos
     const allValid = Array.from(form.querySelectorAll('input')).every(input => {
       return input.closest('.entryarea').classList.contains('success');
     });
 
     if (allValid) {
       const name = form.querySelector('input[type="text"]').value.trim();
-      
-      // 1. Atualizar estado do workflow
-      window.dispatchEvent(new CustomEvent('nextStep', {
-        detail: { name: name }
-      }));
-
-      // 2. Navegar para próxima etapa
+      sessionStorage.setItem('userName', name); 
       window.location.hash = '/workflow/comprovar-endereco';
-      console.log("Navegando para comprovar endereço")
     }
   });
 }

@@ -1,25 +1,18 @@
 export class ProgressBar {
-    static totalSteps = 4;
+  static totalSteps = 4;
 
-    static update(currentStep) {
-        let progress;
-        if (currentStep === 'complete') {
-            progress = 100;
-        } else {
-            progress = ((currentStep - 1) / this.totalSteps) * 100; // Etapas concluídas
-        }
+  static update(currentStep, userName = '') {
+    const overlay = document.getElementById('signature-overlay');
+    const nameEl = document.getElementById('signature-name');
 
-        const progressBar = document.querySelector('.progress-bar');
-        const currentStepEl = document.getElementById('current-step');
-
-        if (progressBar) {
-            progressBar.style.width = `${progress}%`;
-            progressBar.setAttribute('aria-valuenow', progress);
-        }
-        if (currentStepEl) {
-            currentStepEl.textContent = currentStep === 'complete'
-                ? this.totalSteps
-                : currentStep - 1;
-        }
+    if (nameEl && userName) {
+      nameEl.textContent = userName;
     }
+
+    if (overlay) {
+      const progressPercentage = 100 - ((currentStep - 1) * 25); 
+      overlay.style.width = `${progressPercentage}%`;
+    }
+
+  }
 }

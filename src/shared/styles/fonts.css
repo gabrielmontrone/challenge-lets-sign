@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'Bastiga';
-    src: url('public/assets/fonts/Bastliga One.ttf') format('truetype');
+    src: url('../../../public/assets/fonts/Bastliga\ One.ttf') format('truetype');
 }
 
 h1 {
@@ -27,13 +27,6 @@ p {
     font-weight: 200;
     color: white;
     font-size: 1.2rem;
-}
-
-.signature-progress {
-    font-family: 'Bastiga', cursive;
-    padding: 20px;
-    color: white;
-    font-size: 5rem;
 }
 
 .checkbox-label {

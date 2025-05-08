@@ -14,7 +14,8 @@ const routes = {
     template: "src/pages/workflow/confirmar-dados/confirmar-dados.html", 
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
-      "src/pages/workflow/confirmar-dados/confirmar-dados.css" 
+      "src/pages/workflow/confirmar-dados/confirmar-dados.css",
+      "src/shared/styles/progress-bar.css"
     ],
     scripts: [
       "src/layouts/workflow-layout/workflow-layout.js",
@@ -31,7 +32,8 @@ const routes = {
     template: "src/pages/workflow/comprovar-endereco/comprovar-endereco.html", 
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
-      "src/pages/workflow/comprovar-endereco/comprovar-endereco.css" 
+      "src/pages/workflow/comprovar-endereco/comprovar-endereco.css" ,
+      "src/shared/styles/progress-bar.css"
     ],
     scripts:[ 
       "src/layouts/workflow-layout/workflow-layout.js",
@@ -48,7 +50,8 @@ const routes = {
     template: "src/pages/workflow/validacao-facial/validacao-facial.html", 
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
-      "src/pages/workflow/validacao-facial/validacao-facial.css" 
+      "src/pages/workflow/validacao-facial/validacao-facial.css",
+      "src/shared/styles/progress-bar.css"
     ],
     scripts:[ 
       "src/layouts/workflow-layout/workflow-layout.js",
@@ -65,7 +68,8 @@ const routes = {
     template: "src/pages/workflow/autenticacao-pix/autenticacao-pix.html", 
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
-      "src/pages/workflow/autenticacao-pix/autenticacao-pix.css" 
+      "src/pages/workflow/autenticacao-pix/autenticacao-pix.css" ,
+      "src/shared/styles/progress-bar.css"
     ],
     scripts:[ 
       "src/layouts/workflow-layout/workflow-layout.js",
