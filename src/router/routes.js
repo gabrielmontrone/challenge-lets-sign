@@ -89,7 +89,8 @@ const routes = {
       "src/pages/final/assinatura-concluida/assinatura-concluida.css"              
     ],
     scripts: [
-      "src/layouts/final-layout/final-layout.js"
+      "src/layouts/final-layout/final-layout.js",
+      "src/pages/final/assinatura-concluida/assinatura-concluida.js"
     ],
     title: "Assinatura Concluída | Let's Sign"
   },

@@ -1,0 +1,32 @@
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.signature-preview h2 {
+    font-family: 'Bastiga', cursive;
+    font-size: 5rem;
+    color: #fff; 
+    margin: 20px 0;
+}
+
+.signature-reveal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a2e; /* Mesma cor do overlay anterior */
+    animation: slideOut 1s ease-in-out forwards;
+    animation-delay: 0.2s; /* Tempo antes de iniciar a animação */
+    z-index: 2;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
