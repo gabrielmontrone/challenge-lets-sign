@@ -1,0 +1,108 @@
+/* ========== Breakpoints Desktop First ========== */
+/* Desktop grande (xxl) - Estilo padrão já definido */
+
+/* Desktop padrão (xl) */
+@media (max-width: var(--screen-xl)) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .grid-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Laptops (lg) */
+@media (max-width: var(--screen-lg)) {
+  .container {
+    max-width: 960px;
+  }
+
+  .grid-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Tablets (md) */
+@media (max-width: var(--screen-md)) {
+  .container {
+    max-width: 720px;
+  }
+
+  .grid-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* Celulares grandes (sm) */
+@media (max-width: var(--screen-sm)) {
+  .container {
+    max-width: 540px;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .button {
+    width: 100%;
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Celulares pequenos (xs) */
+@media (max-width: var(--screen-xs)) {
+  .container {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ========== Classes Utilitárias Responsivas ========== */
+.hidden-desktop {
+  display: none !important;
+
+  @media (max-width: var(--screen-lg)) {
+    & {
+      display: block !important;
+    }
+  }
+}
+
+.visible-mobile {
+  display: none !important;
+
+  @media (max-width: var(--screen-md)) {
+    & {
+      display: block !important;
+    }
+  }
+}
+
+/* ========== Ajustes para elementos específicos ========== */
+@media (max-width: var(--screen-md)) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .hero-section {
+    height: auto;
+    padding: var(--spacing-xl) 0;
+  }
+}

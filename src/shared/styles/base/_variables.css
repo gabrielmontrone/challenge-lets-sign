@@ -1,32 +1,35 @@
 :root {
-    /* Greens */
-    --light-green: #2EDA8A;
-    --dark-green: #218838;
-  
-    /* Light Reds */
-    --light-red: #FF6B6B;
-  
-    /* Dark Purples */
-    --dark-purple: #1A1A2E;
-  
-    /* Light Blues */
-    --light-blue: #09EEFE;
-  
-    /* Warning Reds */
-    --warning-red: #DC3545;
-  
-    /* Yellows */
-    --yellow: #FFC107;
+  /* ========== Cores ========== */
+  --light-green: #2EDA8A;
+  --dark-green: #218838;
+  --light-red: #FF6B6B;
+  --dark-purple: #1A1A2E;
+  --light-blue: #09EEFE;
+  --warning-red: #DC3545;
+  --yellow: #FFC107;
+  --dark-gray: #6c757d;
 
-    /* Dark Gray */
-    --dark-gray: #6c757d;
-  }
+  /* ========== Breakpoints (Desktop First) ========== */
+  --screen-xxl: 1440px;  /* Desktop grande */
+  --screen-xl: 1200px;   /* Desktop padrão */
+  --screen-lg: 992px;    /* Laptops */
+  --screen-md: 768px;    /* Tablets */
+  --screen-sm: 576px;    /* Celulares grandes */
+  --screen-xs: 375px;    /* Celulares pequenos */
 
-/* Margens */
-.mb-6 {
-    margin-bottom: 4rem; 
-  }
-  
-  .mt-8 {
-    margin-top: 8rem;
-  }
+  /* ========== Espaçamentos ========== */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 8rem;
+
+  /* ========== Tipografia ========== */
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+}
+
