@@ -1,5 +1,5 @@
-@import url(colors.css);
-@import url(fonts.css);
-@import url(buttons.css);
-@import url(margin.css);
-@import url(progress-bar.css);
+@import url(./base/_typography.css);
+@import url(./base/_variables.css);
+@import url(./components/_buttons.css);
+@import url(./components/_progress-bar.css);
+@import url(./utilities/_responsive.css);

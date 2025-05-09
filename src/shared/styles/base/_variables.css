@@ -21,3 +21,12 @@
     /* Dark Gray */
     --dark-gray: #6c757d;
   }
+
+/* Margens */
+.mb-6 {
+    margin-bottom: 4rem; 
+  }
+  
+  .mt-8 {
+    margin-top: 8rem;
+  }
