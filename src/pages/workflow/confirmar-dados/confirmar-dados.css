@@ -76,8 +76,8 @@ input {
   display: none;
 }
 
-.checkmark { color: #2EDA8A; }
-.xmark { color: #ff4757; }
+.checkmark { color: var(--light-green); }
+.xmark { color: var(--warning-red); }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
@@ -90,12 +90,12 @@ input {
 input:focus,
 input:valid {
   color: #f0ffff;
-  border: 4px solid #2EDA8A;
+  border: 4px solid var(--light-green);
 }
 
 input:focus + .labelline,
 input:valid + .labelline {
-  color: #2EDA8A;
+  color: var(--light-green);
   height: 30px;
   line-height: 30px;
   padding: 0 12px;
@@ -104,9 +104,9 @@ input:valid + .labelline {
 }
 
 input.error-border {
-  border-color: #ff4757 !important;
+  border-color: var(--warning-red) !important;
 }
 
 .entryarea.error .labelline {
-  color: #ff4757 !important;
+  color: var(--warning-red) !important;
 }

@@ -1,6 +1,7 @@
 :root {
-    /* Light Greens */
+    /* Greens */
     --light-green: #2EDA8A;
+    --dark-green: #218838;
   
     /* Light Reds */
     --light-red: #FF6B6B;
@@ -16,4 +17,7 @@
   
     /* Yellows */
     --yellow: #FFC107;
+
+    /* Dark Gray */
+    --dark-gray: #6c757d;
   }

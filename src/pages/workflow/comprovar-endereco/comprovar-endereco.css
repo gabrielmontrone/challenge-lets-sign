@@ -67,11 +67,11 @@
 }
 
 .btn-confirmar:hover {
-  background-color: #218838;
+  background-color: var(--dark-green);
 }
 
 .btn-escolher-outro {
-  background-color: #6c757d;
+  background-color: var(--dark-gray);
   color: white;
 }
 

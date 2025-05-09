@@ -5,7 +5,7 @@
   }
 
 .bg-main-gradient {
-  background: #1a1a2e;
+  background: var(--dark-purple);
 }
 
 

@@ -63,8 +63,8 @@
 /* Nova classe para o botão no passo 3 */
 .lets-sign-btn.confirm-step {
     background-color: transparent!important; 
-    border-color: #09EEFE !important;
-    color: #09EEFE;
+    border-color: var(--light-blue)!important;
+    color: var(--light-blue);
 }
 
 /* Esconder indicador quando necessário */

@@ -46,8 +46,8 @@
     width: 100% !important;
     min-width: unset !important;
     flex-grow: 1;
-    color: #09EEFE;
-    border: 1px solid #09EEFE !important;
+    color: var(--light-blue);
+    border: 1px solid var(--light-blue) !important;
 }
 
 .document-option.lets-sign-btn:hover {
@@ -140,8 +140,8 @@
 
 /* Estilo quando marcado */
 .checkbox-container input[type="checkbox"]:checked+label::before {
-    background-color: #2EDA8A;
-    border-color: #2EDA8A;
+    background-color: var(--light-green);
+    border-color: var(--light-green);
 }
 
 /* Cria o "tique" personalizado */
@@ -178,16 +178,16 @@
 
 .checkbox-container.invalid {
     animation: piscar 0.5s ease 1;
-    color: #dc3545;
+    color: var(--warning-red);
 }
 
 .checkbox-container.invalid .checkbox-input {
-    border-color: #dc3545;
-    accent-color: #dc3545;
+    border-color: var(--warning-red);
+    accent-color: var(--warning-red);
 }
 
 .checkbox-container.invalid .checkbox-label {
-    color: #dc3545;
+    color: var(--warning-red);
     font-weight: 400;
 }
 
@@ -237,7 +237,7 @@
 
 .dev-bypass {
     background-color: transparent !important;
-    border-color: #ffc107 !important;
+    border-color: var(--yellow) !important;
     color: #000 !important;
     width: 80% !important;
     margin: 0 auto !important;
