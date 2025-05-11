@@ -1,17 +1,20 @@
 const routes = {
   "/": {
-    layout: "src/layouts/home-layout/home-layout.html", 
-    template: "src/pages/home/pagina-inicial/pagina-inicial.html",     
+    layout: "src/layouts/home-layout/home-layout.html",
+    template: "src/pages/home/pagina-inicial/pagina-inicial.html",
     styles: [
-      "src/layouts/home-layout/home-layout.css",       
-      "src/pages/home/pagina-inicial/pagina-inicial.css"              
+      "src/layouts/home-layout/home-layout.css",
+      "src/pages/home/pagina-inicial/pagina-inicial.css"
+    ],
+    scripts: [
+      "src/pages/home/pagina-inicial/pagina-inicial.js"
     ],
     title: "Home | Let's Sign"
   },
 
   "/workflow/confirmar-dados": {
     layout: "src/layouts/workflow-layout/workflow-layout.html",
-    template: "src/pages/workflow/confirmar-dados/confirmar-dados.html", 
+    template: "src/pages/workflow/confirmar-dados/confirmar-dados.html",
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
       "src/pages/workflow/confirmar-dados/confirmar-dados.css",
@@ -29,13 +32,13 @@ const routes = {
 
   "/workflow/comprovar-endereco": {
     layout: "src/layouts/workflow-layout/workflow-layout.html",
-    template: "src/pages/workflow/comprovar-endereco/comprovar-endereco.html", 
+    template: "src/pages/workflow/comprovar-endereco/comprovar-endereco.html",
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
-      "src/pages/workflow/comprovar-endereco/comprovar-endereco.css" ,
+      "src/pages/workflow/comprovar-endereco/comprovar-endereco.css",
       "src/shared/styles/progress-bar.css"
     ],
-    scripts:[ 
+    scripts: [
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/comprovar-endereco/comprovar-endereco.js",
     ],
@@ -47,13 +50,13 @@ const routes = {
 
   "/workflow/valide-sua-facial": {
     layout: "src/layouts/workflow-layout/workflow-layout.html",
-    template: "src/pages/workflow/validacao-facial/validacao-facial.html", 
+    template: "src/pages/workflow/validacao-facial/validacao-facial.html",
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
       "src/pages/workflow/validacao-facial/validacao-facial.css",
       "src/shared/styles/progress-bar.css"
     ],
-    scripts:[ 
+    scripts: [
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/validacao-facial/validacao-facial.js",
     ],
@@ -65,13 +68,13 @@ const routes = {
 
   "/workflow/autenticacao-pix": {
     layout: "src/layouts/workflow-layout/workflow-layout.html",
-    template: "src/pages/workflow/autenticacao-pix/autenticacao-pix.html", 
+    template: "src/pages/workflow/autenticacao-pix/autenticacao-pix.html",
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
-      "src/pages/workflow/autenticacao-pix/autenticacao-pix.css" ,
+      "src/pages/workflow/autenticacao-pix/autenticacao-pix.css",
       "src/shared/styles/progress-bar.css"
     ],
-    scripts:[ 
+    scripts: [
       "src/layouts/workflow-layout/workflow-layout.js",
       "src/pages/workflow/autenticacao-pix/autenticacao-pix.js",
     ],
@@ -82,11 +85,11 @@ const routes = {
   },
 
   "/assinatura-concluida": {
-    layout: "src/layouts/final-layout/final-layout.html", 
-    template: "src/pages/final/assinatura-concluida/assinatura-concluida.html",     
+    layout: "src/layouts/final-layout/final-layout.html",
+    template: "src/pages/final/assinatura-concluida/assinatura-concluida.html",
     styles: [
-      "src/layouts/final-layout/final-layout.css",       
-      "src/pages/final/assinatura-concluida/assinatura-concluida.css"              
+      "src/layouts/final-layout/final-layout.css",
+      "src/pages/final/assinatura-concluida/assinatura-concluida.css"
     ],
     scripts: [
       "src/layouts/final-layout/final-layout.js",
@@ -97,5 +100,4 @@ const routes = {
 
 
 };
-  export default routes;
-  
+export default routes;

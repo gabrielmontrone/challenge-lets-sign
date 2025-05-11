@@ -1,11 +1,33 @@
+<!-- Header modificado -->
 <div class="header-container">
-  <div class="header-items d-flex justify-content-around align-items-center">
+  <div class="header-items d-flex justify-content-between align-items-center px-4">
+    <!-- Logo -->
     <img src="/public/assets/imgs/logo_white.png" alt="Logo" class="logo-img">
 
-    <div class="right-items d-flex justify-content-around align-items-center">
+    <!-- Hamburger Button (Mobile) -->
+    <button class="navbar-toggler d-md-none position-absolute end-0 me-3" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon">
+        <div class="hamburger-bar"></div>
+        <div class="hamburger-bar"></div>
+        <div class="hamburger-bar"></div>
+      </span>
+    </button>
+
+    <!-- Itens Desktop -->
+    <div class="right-items d-none d-md-flex">
       <h6 class="right-item signature-status" data-header="signature-counter">0/1 assinatura(s)</h6>
       <h6 class="right-item">seuemail@email.com</h6>
       <h6 class="right-item">baixar documento</h6>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="collapse navbar-collapse d-md-none" id="mobileMenu">
+      <div class="mobile-menu-items">
+        <h6 class="mobile-item signature-status">0/1 assinatura(s)</h6>
+        <h6 class="mobile-item">seuemail@email.com</h6>
+        <h6 class="mobile-item">baixar documento</h6>
+      </div>
     </div>
   </div>
 </div>

@@ -4,15 +4,20 @@
   box-sizing: border-box;
 }
 
-html, body {
-  overflow: hidden !important;
+html,
+body {
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: fixed; 
+  min-height: 100vh;
+  overflow-x: hidden !important;
+  position: relative;
 }
 
 .bg-main-gradient {
   background: var(--dark-purple);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
 }

@@ -1,9 +1,16 @@
 .main-content {
     flex: 1 0 auto; 
+    position: relative;
+    z-index: 1;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
+}
+
+.mobile-menu-active .main-content {
+  overflow: hidden;
+  pointer-events: none;
 }
