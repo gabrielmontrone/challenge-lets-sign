@@ -10,6 +10,7 @@
 
 .header-items {
     height: 100%;
+    justify-content: space-around;
 }
 
 .logo-img {
@@ -77,6 +78,9 @@
 @media (max-width: 768px) {
     .header-items {
         flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 
     .logo-img {
