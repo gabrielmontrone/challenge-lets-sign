@@ -10,15 +10,15 @@
   color: var(--light-green);
   background: transparent;
   border: 1px solid var(--light-green) !important;
-  display: block; /* Alterado para bloco */
-  margin: 0 auto; /* Centralização garantida */
+  display: block; 
+  margin: 0 auto; 
   text-decoration: none;
   border-radius: 1rem;
   padding: 10px 30px;
   font-size: 30px;
-  width: 400px !important; /* Largura dinâmica */
-  min-width: 400px !important; /* Mínimo absoluto */
-  max-width: 100% !important; /* Limite máximo */
+  width: 400px !important; 
+  min-width: 400px !important; 
+  max-width: 100% !important; 
   flex-shrink: 0;
   box-sizing: border-box;
   cursor: pointer;
@@ -88,11 +88,11 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  display: block; /* Alterado para bloco */
-  margin: 0 auto; /* Centralização garantida */
-  width: 400px !important; /* Largura dinâmica */
-  min-width: 400px !important; /* Mínimo absoluto */
-  max-width: 100% !important; /* Limite máximo */
+  display: block; 
+  margin: 0 auto; 
+  width: 400px !important; 
+  min-width: 400px !important; 
+  max-width: 100% !important; 
 }
 
 .back-button::before {

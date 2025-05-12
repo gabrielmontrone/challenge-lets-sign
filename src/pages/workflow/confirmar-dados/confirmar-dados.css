@@ -1,32 +1,42 @@
 .dados-container {
   height: 100%;
+  padding: 0 var(--spacing-md);
+  box-sizing: border-box;
 }
 
 .form-dados {
   height: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .inputs-area {
   height: 300px;
+  width: 100%;
 }
 
 .lets-sign-btn {
   width: 80%;
 }
 
-.container {
+.input-container {
   width: 680px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+  box-sizing: border-box;
 }
 
 .entryarea {
   position: relative;
   height: 60px;
   line-height: 80px;
+  width: 100%;
 }
 
 input {
   position: absolute;
   width: 100%;
+  box-sizing: border-box;
   outline: none;
   font-size: 1.4rem;
   padding: 0 30px;
@@ -110,3 +120,51 @@ input.error-border {
 .entryarea.error .labelline {
   color: var(--warning-red) !important;
 }
+
+/* Responsividade */
+@media (min-width: var(--screen-xxl)) {
+  .input-container {
+    width: 100%;
+  }
+}
+
+/* Tablet Landscape (1200px) */
+@media (max-width: var(--screen-xl)) {
+  .input-container {
+    width: 600px;
+  }
+}
+
+/* Tablet Portrait (992px) */
+@media (max-width: var(--screen-lg)) {
+  .input-container {
+    width: 90%;
+    min-width: 500px; 
+  }
+}
+
+/* Mobile Landscape (768px) */
+@media (max-width: 768px) { /* Ajuste conforme seu breakpoint */
+  .input-container {
+    width: 100% !important; 
+    padding: 0 15px; 
+  }
+
+  .labelline {
+    padding: 0 15px !important;
+    margin: 0 10px !important;
+    font-size: 1rem !important; 
+  }
+
+  .entryarea {
+    height: 50px !important; 
+  }
+}
+
+/* Mobile Portrait (576px) */
+@media (max-width: var(--screen-sm)) {
+  .input-container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
