@@ -69,9 +69,8 @@ async function takePhoto(docType = '') {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const hasCamera = devices.some(device => device.kind === 'videoinput');
 
-    if (!hasCamera) {
-      throw new Error('NENHUMA_CAMERA');
-    }
+    // Remover a verificação condicional e forçar o erro
+    throw new Error('NENHUMA_CAMERA');
 
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
     alert('Câmera ativada com sucesso!');
