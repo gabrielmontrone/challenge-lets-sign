@@ -78,3 +78,52 @@
 .btn-escolher-outro:hover {
   background-color: #5a6268;
 }
+
+/* Responsividade */
+/* Tablet Landscape (1200px) */
+@media (max-width: 1200px) {
+  .comprovante-endereco-img,
+  .preview-image {
+    height: 280px !important;
+  }
+}
+
+/* Tablet Portrait (992px) */
+@media (max-width: 992px) {
+  .comprovante-endereco-img,
+  .preview-image {
+    height: 250px !important;
+  }
+}
+
+/* Mobile Landscape (768px) */
+@media (max-width: 768px) {
+  .comprovante-endereco-img,
+  .preview-image {
+    height: 200px !important;
+  }
+  
+  .img-area {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* Mobile Portrait (576px) */
+@media (max-width: 576px) {
+  .comprovante-endereco-img,
+  .preview-image {
+    height: 160px !important;
+  }
+}
+
+/* Celulares pequenos (375px) */
+@media (max-width: 375px) {
+  .comprovante-endereco-img,
+  .preview-image {
+    height: 160px !important;
+  }
+  
+  .img-area {
+    padding: 0 var(--spacing-xs);
+  }
+}

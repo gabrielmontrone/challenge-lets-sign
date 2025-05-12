@@ -18,7 +18,8 @@ const routes = {
     styles: [
       "src/layouts/workflow-layout/workflow-layout.css",
       "src/pages/workflow/confirmar-dados/confirmar-dados.css",
-      "src/shared/styles/progress-bar.css"
+      "src/shared/styles/progress-bar.css",
+      "src/shared/styles/base/_variables.css"
     ],
     scripts: [
       "src/layouts/workflow-layout/workflow-layout.js",
@@ -34,6 +35,7 @@ const routes = {
     layout: "src/layouts/workflow-layout/workflow-layout.html",
     template: "src/pages/workflow/comprovar-endereco/comprovar-endereco.html",
     styles: [
+      "src/shared/styles/base/_variables.css",
       "src/layouts/workflow-layout/workflow-layout.css",
       "src/pages/workflow/comprovar-endereco/comprovar-endereco.css",
       "src/shared/styles/progress-bar.css"

@@ -162,7 +162,7 @@ input.error-border {
 }
 
 /* Mobile Portrait (576px) */
-@media (max-width: var(--screen-sm)) {
+@media (max-width: 576px) {
   .input-container {
     padding: 0 var(--spacing-sm);
   }
