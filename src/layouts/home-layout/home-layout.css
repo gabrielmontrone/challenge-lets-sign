@@ -1,62 +1,96 @@
+.main-container {
+  max-width: 1440px;
+  width: 95%;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.left-column {
+  background-color: #282855;
+}
+
+.row {
+  height: 100%;
+}
+
+.btn-mobile-only {
+  display: none;
+}
+
+/* Breakpoints  */
+@media (max-width: 1200px) {
+
+  /* --screen-xl */
   .main-container {
-    max-width: var(--screen-xxl);
-    ;
-    width: 95%;
-    margin: auto;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    width: 98%;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  /* --screen-lg */
+  .main-container {
+    border-radius: 15px;
+  }
+
+  .left-column,
+  .right-column {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* --screen-md */
+  .main-container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .main-section {
+    background: var(--dark-purple);
   }
 
   .left-column {
-    background-color: #282855;
+    display: none !important;
   }
 
-  .row {
-    height: 100%;
+  .right-column {
+    min-height: 100vh !important;
+    width: 100% !important;
   }
 
-  /* Usando breakpoints do _variables.css */
-  @media (max-width: var(--screen-xl)) {
+  .btn-mobile-only {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-blue);
+    border: 1px solid var(--light-blue) !important;
+  }
+}
 
-    /* 1200px */
-    .main-container {
-      width: 98%;
-    }
+@media (max-width: 576px) {
+
+  /* --screen-sm */
+  .main-container {
+    box-shadow: none !important;
   }
 
-  @media (max-width: var(--screen-lg)) {
-
-    /* 992px */
-    .main-container {
-      border-radius: 15px;
-    }
+  .right-column {
+    min-height: 100vh !important;
+    padding: var(--spacing-sm) 0 !important;
   }
+}
 
-  @media (max-width: var(--screen-md)) {
+@media (max-width: 375px) {
 
-    /* 768px */
-    .main-container {
-      width: 100%;
-      border-radius: 0;
-    }
-
-    .row {
-      min-height: 100vh !important;
-      flex-direction: column;
-    }
-
-    .left-column,
-    .right-column {
-      height: auto !important;
-      min-height: 50vh;
-    }
+  /* --screen-xs */
+  .left-column,
+  .right-column {
+    min-height: 70vh;
+    padding: var(--spacing-xs);
   }
-
-  @media (max-width: var(--screen-sm)) {
-
-    /* 576px */
-    .main-container {
-      box-shadow: none !important;
-    }
-  }
+}

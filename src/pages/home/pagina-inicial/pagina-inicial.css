@@ -16,7 +16,7 @@
 .pdf-container {
   width: 794px;
   height: 100%;
-  margin: 0 auto; 
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 14px;
   background: white;
@@ -75,4 +75,129 @@
 
 .lets-sign-btn {
   font-weight: bold;
+  width: 80%;
+}
+
+/* Breakpoints */
+@media (max-width: 1440px) {
+
+  /* --screen-xxl */
+  .pdf-container {
+    width: 720px;
+    height: 100%;
+  }
+
+  .logo-img {
+    width: 380px;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  /* --screen-xl */
+  .pdf-container {
+    width: 650px;
+    height: 100%;
+  }
+
+  .logo-img {
+    width: 340px;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+
+  /* --screen-lg */
+  .pdf-container {
+    width: 580px;
+    height: 100%;
+  }
+
+  .logo-img {
+    width: 300px;
+  }
+
+  .step-icon {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* --screen-md */
+  #left-content {
+    height: 60vh;
+  }
+
+  .pdf-container {
+    width: 90%;
+    max-width: 600px;
+    height: 90%;
+  }
+
+  .right-column-content {
+    background: #22223f;
+    border-radius: 6px;
+  }
+
+  .logo-img {
+    width: 70vw;
+    max-width: 280px;
+  }
+
+  .right-column {
+    padding: 2rem 0 !important;
+  }
+
+  .list-unstyled li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* --screen-sm */
+  .pdf-container {
+    width: 95%;
+    height: 85%;
+  }
+
+  .logo-img {
+    width: 80vw;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 !important;
+  }
+
+  .lets-sign-btn {
+    padding: 0.8rem !important;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 375px) {
+
+  /* --screen-xs */
+  .pdf-container {
+    height: 80%;
+  }
+
+  .logo-img {
+    width: 85vw;
+  }
+
+  .list-unstyled li {
+    font-size: 0.85rem;
+    margin-bottom: 1rem !important;
+  }
+
+  .safe-text {
+    font-size: 0.7rem;
+  }
 }
