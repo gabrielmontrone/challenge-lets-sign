@@ -17,7 +17,6 @@
   padding: 10px 30px;
   font-size: 30px;
   width: 400px !important; 
-  min-width: 400px !important; 
   max-width: 100% !important; 
   flex-shrink: 0;
   box-sizing: border-box;
@@ -119,7 +118,7 @@
 }
 
 /* Responsividade */
-@media (min-width: var(--screen-md)) {
+@media (min-width: var(768px)) {
   .lets-sign-btn,
   .back-button {
     width: 400px !important;
@@ -128,7 +127,7 @@
   }
 }
 
-@media (max-width: var(--screen-sm)) {
+@media (max-width: var(576px)) {
   .lets-sign-btn,
   .back-button {
     font-size: 26px;
@@ -146,11 +145,12 @@
   }
 }
 
-@media (max-width: var(--screen-xs)) {
+@media (max-width: var(375px)) {
   .lets-sign-btn,
   .back-button {
     font-size: 22px;
     padding: 6px 12px;
     border-radius: 0.8rem;
+    width: 280px !important;
   }
 }
