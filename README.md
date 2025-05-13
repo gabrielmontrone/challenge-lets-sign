@@ -31,9 +31,13 @@ O projeto utiliza uma arquitetura SPA com:
 
 ### Estrutura de Pastas
 public/
+
 └── user/
+
 ├── dados-exemplo.json # Modelo para preenchimento de dados
+
 ├── comprovante-exemplo.pdf # Modelo de comprovante de endereço
+
 └── README.md # Instruções detalhadas
 
 
