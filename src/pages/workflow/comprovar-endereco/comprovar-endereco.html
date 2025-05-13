@@ -2,21 +2,19 @@
   <div class="endereco-section d-flex flex-column align-items-center">
     <div class="img-area d-flex justify-content-start align-items-center">
       <!-- Imagem padrão -->
-      <img src="public/assets/imgs/comprovar-endereco/comprovante_endereco.svg" 
-           class="comprovante-endereco-img default-image" 
-           alt="Comprovante padrão">
-      
+      <img src="public/assets/imgs/comprovar-endereco/comprovante_endereco.svg"
+        class="comprovante-endereco-img default-image" alt="Comprovante padrão">
+
       <!-- Preview (adicionar esta nova imagem) -->
-      <img src="#" 
-           class="comprovante-endereco-img preview-image d-none" 
-           alt="Pré-visualização">
+      <img src="#" class="comprovante-endereco-img preview-image d-none" alt="Pré-visualização">
     </div>
     <div class="button-container d-flex flex-column justify-content-center mt-4">
       <!-- Input oculto -->
       <input type="file" id="fileInput" hidden accept=".pdf,.doc,.docx,.jpg,.png">
-      
+
       <!-- Botão original -->
-      <button type="button" id="uploadButton" class="lets-sign-btn d-block mx-auto mb-3" onclick="document.getElementById('fileInput').click()">
+      <button type="button" id="uploadButton" class="lets-sign-btn d-block mx-auto mb-3"
+        onclick="document.getElementById('fileInput').click()">
         Anexar documento
       </button>
 
@@ -25,7 +23,7 @@
         <div class="d-flex align-items-center justify-content-center gap-2 h-100">
           <span id="fileName" class="file-name"></span>
           <button type="button" class="btn-confirmar" id="confirmButton">Confirmar</button>
-<button type="button" class="btn-escolher-outro" id="chooseAnotherButton">Escolher outro</button>
+          <button type="button" class="btn-escolher-outro" id="chooseAnotherButton">Escolher outro</button>
         </div>
       </div>
 
