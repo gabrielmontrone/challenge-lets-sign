@@ -107,6 +107,30 @@
   .img-area {
     padding: 0 var(--spacing-sm);
   }
+
+  .selected-file-container {
+    height: auto;
+    padding: 8px;
+  }
+  
+  .selected-file-container .d-flex {
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    gap: 10px;
+    align-items: stretch; /* Estica os itens para ocupar a largura */
+  }
+  
+  .file-name {
+    max-width: 100%; /* Ocupa toda a largura disponível */
+    text-align: center;
+    white-space: normal; /* Permite quebra de linha */
+    margin-bottom: 5px;
+  }
+  
+  .btn-confirmar,
+  .btn-escolher-outro {
+    width: 100%; /* Botões ocupam toda a largura */
+    padding: 8px 12px; /* Aumenta um pouco o padding para melhor toque */
+  }
 }
 
 /* Mobile Portrait (576px) */
@@ -126,5 +150,14 @@
   
   .img-area {
     padding: 0 var(--spacing-xs);
+  }
+
+  .file-name {
+    font-size: 0.8em; /* Reduz um pouco o tamanho da fonte */
+  }
+  
+  .btn-confirmar,
+  .btn-escolher-outro {
+    font-size: 0.75em; /* Reduz o tamanho da fonte dos botões */
   }
 }
