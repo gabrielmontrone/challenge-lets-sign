@@ -19,8 +19,8 @@ if (cpfInput) {
 
 // Aniversário
 document.getElementById('birthdate').addEventListener('input', function (e) {
-  let value = e.target.value.replace(/\D/g, '');
-
+  let value = e.target.value.replace(/\D/g, ''); 
+  
   if (value.length > 2) value = value.slice(0, 2) + '/' + value.slice(2);
   if (value.length > 5) value = value.slice(0, 5) + '/' + value.slice(5, 9);
 
@@ -32,11 +32,11 @@ document.getElementById('birthdate').addEventListener('input', function (e) {
 function validarCPF(cpf) {
   cpf = cpf.replace(/\D/g, '');
   if (cpf.length !== 11) return false;
-
+  
   // Cálculo do primeiro dígito verificador
   let soma = 0;
   for (let i = 0; i < 9; i++) {
-    soma += parseInt(cpf.charAt(i)) * (10 - i);
+      soma += parseInt(cpf.charAt(i)) * (10 - i);
   }
   let resto = (soma * 10) % 11;
   if (resto !== parseInt(cpf.charAt(9))) return false;
@@ -44,7 +44,7 @@ function validarCPF(cpf) {
   // Cálculo do segundo dígito verificador
   soma = 0;
   for (let i = 0; i < 10; i++) {
-    soma += parseInt(cpf.charAt(i)) * (11 - i);
+      soma += parseInt(cpf.charAt(i)) * (11 - i);
   }
   resto = (soma * 10) % 11;
   return resto === parseInt(cpf.charAt(10));
@@ -53,30 +53,30 @@ function validarCPF(cpf) {
 function validarData(data) {
   const regex = /^\d{2}\/\d{2}\/\d{4}$/;
   if (!regex.test(data)) return false;
-
+  
   const [dia, mes, ano] = data.split('/').map(Number);
   const dataObj = new Date(ano, mes - 1, dia);
-
+  
   return (
-    dataObj.getDate() === dia &&
-    dataObj.getMonth() === mes - 1 &&
-    dataObj.getFullYear() === ano
+      dataObj.getDate() === dia &&
+      dataObj.getMonth() === mes - 1 &&
+      dataObj.getFullYear() === ano
   );
 }
 
 // Máscaras de Input
-document.getElementById('cpf').addEventListener('input', function (e) {
+document.getElementById('cpf').addEventListener('input', function(e) {
   let value = e.target.value.replace(/\D/g, '');
   value = value.replace(/(\d{3})(\d)/, '$1.$2')
-    .replace(/(\d{3})(\d)/, '$1.$2')
-    .replace(/(\d{3})(\d{1,2})/, '$1-$2');
+               .replace(/(\d{3})(\d)/, '$1.$2')
+               .replace(/(\d{3})(\d{1,2})/, '$1-$2');
   e.target.value = value.substring(0, 14);
 });
 
-document.getElementById('birthdate').addEventListener('input', function (e) {
+document.getElementById('birthdate').addEventListener('input', function(e) {
   let value = e.target.value.replace(/\D/g, '');
   value = value.replace(/(\d{2})(\d)/, '$1/$2')
-    .replace(/(\d{2})(\d)/, '$1/$2');
+               .replace(/(\d{2})(\d)/, '$1/$2');
   e.target.value = value.substring(0, 10);
 });
 
@@ -89,54 +89,54 @@ entryAreas.forEach(entryarea => {
   let loadingTimeout;
 
   input.addEventListener('input', (e) => {
-    clearTimeout(timeout);
-    clearTimeout(loadingTimeout);
+      clearTimeout(timeout);
+      clearTimeout(loadingTimeout);
+      
+      // Reseta estados
+      entryarea.classList.remove('loading', 'success', 'error');
+      input.classList.remove('error-border');
 
-    // Reseta estados
-    entryarea.classList.remove('loading', 'success', 'error');
-    input.classList.remove('error-border');
-
-    timeout = setTimeout(() => {
-      const value = input.value.trim();
-
-      if (!value) {
-        entryarea.classList.add('error');
-        input.classList.add('error-border');
-      } else {
-        entryarea.classList.add('loading');
-
-        loadingTimeout = setTimeout(() => {
-          entryarea.classList.remove('loading');
-
-          // Validação específica para cada campo
-          if (input.id === 'cpf') {
-            const cpfLimpo = value.replace(/\D/g, '');
-            if (!validarCPF(cpfLimpo)) {
+      timeout = setTimeout(() => {
+          const value = input.value.trim();
+          
+          if (!value) {
               entryarea.classList.add('error');
               input.classList.add('error-border');
-            } else {
-              entryarea.classList.add('success');
-            }
-          } else if (input.id === 'birthdate') {
-            if (!validarData(value)) {
-              entryarea.classList.add('error');
-              input.classList.add('error-border');
-            } else {
-              entryarea.classList.add('success');
-            }
           } else {
-            entryarea.classList.add('success');
+              entryarea.classList.add('loading');
+              
+              loadingTimeout = setTimeout(() => {
+                  entryarea.classList.remove('loading');
+                  
+                  // Validação específica para cada campo
+                  if (input.id === 'cpf') {
+                      const cpfLimpo = value.replace(/\D/g, '');
+                      if (!validarCPF(cpfLimpo)) {
+                          entryarea.classList.add('error');
+                          input.classList.add('error-border');
+                      } else {
+                          entryarea.classList.add('success');
+                      }
+                  } else if (input.id === 'birthdate') {
+                      if (!validarData(value)) {
+                          entryarea.classList.add('error');
+                          input.classList.add('error-border');
+                      } else {
+                          entryarea.classList.add('success');
+                      }
+                  } else {
+                      entryarea.classList.add('success');
+                  }
+              }, 2000);
           }
-        }, 2000);
-      }
-    }, 500);
+      }, 500);
   });
 
   input.addEventListener('blur', () => {
-    if (!input.value.trim()) {
-      entryarea.classList.add('error');
-      input.classList.add('error-border');
-    }
+      if (!input.value.trim()) {
+          entryarea.classList.add('error');
+          input.classList.add('error-border');
+      }
   });
 });
 
@@ -147,14 +147,14 @@ const backButton = document.querySelector('.back-button');
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
+    
     const allValid = Array.from(form.querySelectorAll('input')).every(input => {
       return input.closest('.entryarea').classList.contains('success');
     });
 
     if (allValid) {
       const name = form.querySelector('input[type="text"]').value.trim();
-      sessionStorage.setItem('userName', name);
+      sessionStorage.setItem('userName', name); 
       window.location.hash = '/workflow/comprovar-endereco';
     }
   });
@@ -163,10 +163,6 @@ if (form) {
 // Evento do botão Voltar
 if (backButton) {
   backButton.addEventListener('click', () => {
-    const rotaVoltar = "/";
-
-    // Redirecionamento
-    window.location.href = rotaVoltar;
     window.dispatchEvent(new CustomEvent('previousStep'));
   });
 }

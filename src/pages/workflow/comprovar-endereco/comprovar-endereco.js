@@ -92,13 +92,3 @@ document.getElementById('confirmButton').addEventListener('click', () => {
     alert('Por favor, selecione um arquivo primeiro!');
   }
 });
-
-// Voltar para página anterior 
-const backButton = document.querySelector('.back-button');
-
-if (backButton) {
-  backButton.addEventListener('click', () => {
-    window.location.href = "#/workflow/confirmar-dados"
-    window.dispatchEvent(new CustomEvent('previousStep'));
-  });
-}
