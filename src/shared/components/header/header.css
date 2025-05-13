@@ -88,6 +88,8 @@
 
   .logo-img {
     height: 45px; 
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .right-items .right-item {
