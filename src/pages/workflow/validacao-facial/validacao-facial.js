@@ -74,7 +74,6 @@ async function takePhoto(docType = '') {
 
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
     alert('Câmera ativada com sucesso!');
-    // Adicione aqui a lógica de captura
 
   } catch (error) {
     console.error('Erro:', error);
@@ -97,7 +96,11 @@ function initEventListeners() {
     }
 
     if (e.target.matches('#backButton, .document-buttons .back-button')) {
-      stepManager.back();
+      if (stepManager.currentStep === 1) {
+        window.location.href = "#/workflow/comprovar-endereco";
+      } else {
+        stepManager.back();
+      }
     }
 
     if (e.target.matches('.document-option')) {

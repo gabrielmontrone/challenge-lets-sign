@@ -6,17 +6,17 @@ const config = {
     const nextButton = document.getElementById('nextButton');
     const stepsIndicator = document.querySelector('.steps-indicator');
     const devBypassButton = document.querySelector('.dev-bypass');
-    
+
     // Esconder bolinhas no passo 3
     if (currentStep === 3) {
-        stepsIndicator.classList.add('d-none-indicator');
-        nextButton.classList.add('confirm-step');
-        devBypassButton.style.display = 'block'; 
-      } else {
-        stepsIndicator.classList.remove('d-none-indicator');
-        nextButton.classList.remove('confirm-step');
-        devBypassButton.style.display = 'none';
-      }
+      stepsIndicator.classList.add('d-none-indicator');
+      nextButton.classList.add('confirm-step');
+      devBypassButton.style.display = 'block';
+    } else {
+      stepsIndicator.classList.remove('d-none-indicator');
+      nextButton.classList.remove('confirm-step');
+      devBypassButton.style.display = 'none';
+    }
 
     if (nextButton) {
       nextButton.innerHTML = currentStep === 3 ? 'Copiar código' : 'Avançar';
@@ -34,7 +34,11 @@ function initEventListeners() {
     }
 
     if (e.target.matches('#backButton')) {
-      stepManager.back();
+      if (stepManager.currentStep === 1) {
+        window.location.href = "#/workflow/valide-sua-facial";
+      } else {
+        stepManager.back();
+      }
     }
 
     if (e.target.matches('.dev-bypass')) {
