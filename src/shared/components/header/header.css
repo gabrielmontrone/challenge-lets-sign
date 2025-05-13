@@ -75,6 +75,37 @@
     border-bottom: none;
 }
 
+@media (max-width: 1366px) {
+  .header-container {
+    height: 10vh; 
+    padding: 0 20px; 
+  }
+
+  .header-items {
+    justify-content: space-around; 
+    gap: 20px; 
+  }
+
+  .logo-img {
+    height: 45px; 
+  }
+
+  .right-items .right-item {
+    padding: 0 0.8rem; 
+    font-size: 0.95rem; 
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 768px) {
+  .header-container {
+    min-height: 70px; 
+  }
+  
+  .header-items {
+    padding: 0 15px; 
+  }
+}
+
 @media (max-width: 768px) {
     .header-items {
         flex-wrap: nowrap;
