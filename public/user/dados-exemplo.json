@@ -1,0 +1,9 @@
+{
+    "_comentario1": "Este é um arquivo de exemplo com dados fictícios.",
+    
+    "usuario": {
+    "nomeCompleto": "Felipe Oliveira",
+    "cpf": "529.982.247-25", 
+    "dataNascimento": "22-04-1985"
+  }
+}
