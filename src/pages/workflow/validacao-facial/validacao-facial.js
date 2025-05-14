@@ -59,9 +59,7 @@ async function takePhoto(docType = '') {
 
   if (!checkbox.checked) {
     checkboxContainer.classList.add('invalid');
-    setTimeout(() => {
-      checkboxContainer.classList.remove('invalid');
-    }, 1500);
+    setTimeout(() => checkboxContainer.classList.remove('invalid'), 1500);
     return;
   }
 
@@ -69,15 +67,23 @@ async function takePhoto(docType = '') {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const hasCamera = devices.some(device => device.kind === 'videoinput');
 
-    // Remover a verificação condicional e forçar o erro
-    throw new Error('NENHUMA_CAMERA');
+    if (!hasCamera) throw new Error('NENHUMA_CAMERA');
 
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-    alert('Câmera ativada com sucesso!');
-    // Adicione aqui a lógica de captura
+
+    // Esconde botões e mostra interface de câmera
+    document.querySelector('.document-buttons').classList.add('d-none');
+    document.querySelector('.camera-interface').classList.remove('d-none');
+
+    const video = document.getElementById('cameraVideo');
+    video.srcObject = stream;
+
+    // Guardar stream para parar depois, se necessário
+    video.dataset.streamActive = true;
 
   } catch (error) {
     console.error('Erro:', error);
+
     document.querySelector('.document-buttons').classList.add('d-none');
 
     if (error.name === 'NotFoundError' || error.message === 'NENHUMA_CAMERA') {
@@ -87,6 +93,7 @@ async function takePhoto(docType = '') {
     }
   }
 }
+
 
 // Configuração de eventos
 function initEventListeners() {
@@ -115,6 +122,32 @@ function initEventListeners() {
   });
 }
 
+function initCameraInterface() {
+  document.getElementById('snapPhotoBtn')?.addEventListener('click', () => {
+    const video = document.getElementById('cameraVideo');
+    if (!video) return;
+
+    // Captura do frame atual
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0);
+
+    // Opcional: salvar imagem ou enviar para backend
+
+    // Parar a câmera
+    if (video.dataset.streamActive && video.srcObject) {
+      video.srcObject.getTracks().forEach(track => track.stop());
+      video.dataset.streamActive = false;
+    }
+
+    // Ir para a próxima rota
+    window.location.hash = '#/workflow/autenticacao-pix';
+  });
+}
+
+
 // Inicialização
 function init() {
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -123,6 +156,7 @@ function init() {
 
   stepManager.updateStepDisplay();
   initEventListeners();
+  initCameraInterface();
 }
 
 init();

@@ -1,5 +1,5 @@
 <div class="validacao-container d-flex flex-column">
-    <div class="steps-wrapper">
+    <div class="steps-wrapper">z
         <div class="img-and-step d-flex justify-content-start align-items-center flex-column">
             <!-- Imagens -->
             <div class="img-area mt-2">
@@ -42,9 +42,10 @@
                 <div class="checkbox-container d-none">
                     <div class="d-flex align-items-center">
                         <input type="checkbox" id="biometriaCheckbox" class="checkbox-input">
-                        <label for="biometriaCheckbox" class="checkbox-label ms-2">Autorizo uso da biometria facial</label>
+                        <label for="biometriaCheckbox" class="checkbox-label ms-2">Autorizo uso da biometria
+                            facial</label>
                     </div>
-                </div>             
+                </div>
             </div>
         </div>
 
@@ -75,6 +76,23 @@
                 </div>
                 <button type="button" class="lets-sign-btn back-button w-100 mt-3">
                     Voltar
+                </button>
+            </div>
+
+            <!-- Interface de câmera -->
+            <div class="camera-interface d-none justify-content-center align-items-center flex-column w-100 px-3"
+                style="max-width: 500px; margin: auto;">
+                <div class="video-wrapper position-relative w-100" style="aspect-ratio: 4/5;">
+                    <video id="cameraVideo" autoplay playsinline
+                        class="w-100 h-100 rounded-4 border border-white"></video>
+                    <!-- Polígono SVG no topo do vídeo -->
+                    <svg class="position-absolute top-0 start-0 w-100 h-100" viewBox="0 0 100 100"
+                        preserveAspectRatio="none">
+                        <ellipse cx="50" cy="50" rx="25" ry="35" fill="none" stroke="white" stroke-width="2" />
+                    </svg>
+                </div>
+                <button type="button" class="lets-sign-btn mt-3" id="snapPhotoBtn">
+                    Tirar Foto
                 </button>
             </div>
 

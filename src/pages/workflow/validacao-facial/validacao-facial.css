@@ -257,3 +257,60 @@
 .lets-sign-btn.dev-bypass {
     width: 100%;
 }
+
+.camera-interface video {
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.camera-interface {
+  position: fixed;
+  top: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background-color: white; /* mude para transparent se quiser fundo removido */
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-wrapper {
+  height: 500px; /* ou qualquer valor que você preferir */
+  max-height: 60vh;
+}
+
+.face-overlay ellipse {
+  stroke: white;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Responsivo para dispositivos menores */
+@media (max-width: 768px) {
+  .camera-interface {
+    padding: 1rem;
+  }
+
+  .camera-interface svg polygon {
+    stroke-width: 1.5;
+  }
+
+  .face-overlay ellipse {
+    rx: 22;
+    ry: 32;
+    stroke-width: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .face-overlay ellipse {
+    rx: 20;
+    ry: 30;
+    stroke-width: 1.2;
+  }
+}
+
